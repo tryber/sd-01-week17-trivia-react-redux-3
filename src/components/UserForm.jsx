@@ -14,7 +14,10 @@ class UserForm extends React.Component {
           <p>Nome do jogador</p>
           <input type="text" placeholder="nome" required />
           <Link to="/settings">
-            <button>Configurações</button>
+            <button type="button">Configurações</button>
+          </Link>
+          <Link to="/game">
+            <button type="button">Jogar</button>
           </Link>
         </div>
       </div>
