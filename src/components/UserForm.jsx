@@ -1,4 +1,5 @@
 import React from 'react';
+
 class UserForm extends React.Component {
   render() {
     return (
@@ -8,7 +9,8 @@ class UserForm extends React.Component {
         <p>Nome do jogador</p>
         <input type="text" placeholder="nome" required />
       </div>
-    )
+    );
   }
 }
+
 export default UserForm;
