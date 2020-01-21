@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from '../trivia.png';
-import '../App.css';
 import { Link } from 'react-router-dom';
+import logo from '../trivia.png';
 
 class UserForm extends React.Component {
   render() {

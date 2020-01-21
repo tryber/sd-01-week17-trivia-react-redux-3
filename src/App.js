@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import UserForm from './components/UserForm';
 import Settings from './components/Settings';
+import './App.css';
+
 
 export default function App() {
   return (
