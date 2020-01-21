@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../trivia.png';
 import '../App.css';
+import { Link } from 'react-router-dom';
 
 class UserForm extends React.Component {
   render() {
@@ -13,6 +14,9 @@ class UserForm extends React.Component {
           <input type="text" placeholder="email" required />
           <p>Nome do jogador</p>
           <input type="text" placeholder="nome" required />
+          <Link to="/settings">
+            <button>Configurações</button>
+          </Link>
         </div>
       </div>
     );
