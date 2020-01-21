@@ -8,8 +8,7 @@ class UserForm extends React.Component {
       <div className="App">
         <div className="initial-page">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>IIIIIIIIIIIIIIIIIIIIIIt's 
-            Tiiiiiime!!!</p>
+          <p>SUA VEZ</p>
           <p>Email do Gravatar</p>
           <input type="text" placeholder="email" required />
           <p>Nome do jogador</p>
