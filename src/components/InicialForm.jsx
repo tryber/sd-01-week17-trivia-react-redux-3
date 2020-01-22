@@ -18,7 +18,7 @@ const inicialForm = (props) => {
       <input
         type="text"
         placeholder="nome"
-        data-testid="input-gravatar-email"
+        data-testid="input-player-name"
         value={valueName}
         required
         onChange={onChangeValueName}
