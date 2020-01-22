@@ -1,14 +1,17 @@
-import '../App.css';
+import React from 'react';
+import './Header.css';
 
-const Header = (
+const Header = ({
   srcLink = 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
   player = 'João',
   score = 20
-  ) => {
+}) => {
   return (
     <div className='background-header'>
-      <img src={srcLink} alt={`${player} picture`}></img>
-      <p>{`Jogador: ${player}`}</p>
+      <div className='photo-and-name-player'>
+        <img src={srcLink} alt={`${player} gravatar`}></img>
+        <p>{`Jogador: ${player}`}</p>
+      </div>
       <p>{`Pontos: ${score}`}</p>
     </div>
   );
