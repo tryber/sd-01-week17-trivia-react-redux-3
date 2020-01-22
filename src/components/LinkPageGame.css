@@ -1,0 +1,11 @@
+.link-game {
+  align-items: center;
+  background-color: green;
+  color: black;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  margin-top: 30px;
+  text-decoration: none;
+  width: 300px;
+}
