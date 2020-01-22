@@ -16,5 +16,5 @@ const linkPageGame = (props) => {
 export default linkPageGame;
 
 linkPageGame.propTypes = {
-  disable: PropTypes.bool,
+  disable: PropTypes.bool.isRequired,
 };
