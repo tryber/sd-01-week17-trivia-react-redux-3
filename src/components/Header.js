@@ -10,7 +10,7 @@ const Header = ({
   <div className="background-header">
     <div className="photo-and-name-player">
       <img src={srcLink} alt={`${player} gravatar`} />
-      <p>{`Jogador: ${player}`}</p>
+      <p data-testid="header-player-name">{`Jogador: ${player}`}</p>
     </div>
     <p data-testid="header-score">{`Pontos: ${score}`}</p>
   </div>
