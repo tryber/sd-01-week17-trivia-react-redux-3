@@ -1,0 +1,13 @@
+.button-settings {
+  background-color: red;
+  border-radius: 100%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.settings {
+  display: flex;
+  justify-content: flex-end;
+  width: 500px;
+}
