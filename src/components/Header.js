@@ -16,7 +16,6 @@ const Header = ({
   </div>
 );
 
-
 export default Header;
 
 Header.propTypes = {
