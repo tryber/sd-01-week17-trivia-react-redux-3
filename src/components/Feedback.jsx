@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import TextFeedback from './TextFeedback';
-import { Link } from 'react-router-dom';
-import './Feedback.css'
+import './Feedback.css';
 
 const Feedback = () => (
   <div className="Feedback">

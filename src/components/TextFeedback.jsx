@@ -2,8 +2,8 @@ import React from 'react';
 
 const ShowProps = (value) => {
   const couch = ['Pessimo', 'Ruim', 'Razoavel', 'Bom', 'Show'];
-  return couch[value]
-}
+  return couch[value];
+};
 
 const renderTitleFeedback = (contCorrect) => (
   <h2 className="title-feedback">
