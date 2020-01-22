@@ -1,7 +1,13 @@
 import React from 'react';
 
-const game = () => {
-  return <div>Aguardando Preenchimeno</div>
-};
+class Game extends React.Component {
+  render() {
+    return (
+      <div>
+        Aguardando alterações
+      </div>
+    );
+  }
+}
 
-export default game;
+export default Game;

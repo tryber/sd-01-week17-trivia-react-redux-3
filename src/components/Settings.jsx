@@ -1,7 +1,13 @@
 import React from 'react';
 
-const settings = () => {
-  return <div>Aguardando preenchimento...</div>;
-};
+class Settings extends React.Component {
+  render() {
+    return (
+      <div>
+        Aguardando alterações
+      </div>
+    );
+  }
+}
 
-export default settings;
+export default Settings;
