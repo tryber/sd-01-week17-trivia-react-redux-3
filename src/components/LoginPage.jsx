@@ -34,7 +34,7 @@ class LoginPage extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p>SUA VEZ</p>
           <LinkPageSettings />
-          <InicialForm 
+          <InicialForm
             valueEmail={valueEmail}
             onChangeValueEmail={(event) => this.registrationData(event, 'valueEmail')}
             valueName={valueName}

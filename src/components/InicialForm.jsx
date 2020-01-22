@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const inicialForm = props => {
+const inicialForm = (props) => {
   const { valueEmail, valueName, onChangeValueEmail, onChangeValueName } = props;
   return (
     <div>
