@@ -1,0 +1,56 @@
+.Feedback .sub-div {
+  align-items: center;
+  background: #FFFFFF;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  width: 1000px;
+}
+
+.Feedback .sub-div p {
+  color: black;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  height: 50px;
+  margin: 2px;
+  text-decoration: none;
+  width: 374px;
+}
+
+.Feedback .sub-div h2 {
+  color: black;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  height: 50px;
+  margin: 2px;
+  margin-top:20px;
+  text-decoration: none;
+  width: 374px;
+}
+
+
+
+.Feedback .sub-div a {
+  background: #F0F0F0;
+  border: 1px solid black;
+  color: black;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  height: 50px;
+  margin: 2px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  width: 374px;
+}
+
+.Feedback .sub-div .green {
+  background: #86D660;
+}
