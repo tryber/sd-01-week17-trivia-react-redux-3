@@ -5,7 +5,7 @@ import './LinkPageSettings.css';
 const linkPageSettings = () => (
   <Link to="/settings">
     <div className="settings">
-      <button type="button" className="button-settings"></button>
+      <button type="button" className="button-settings" />
     </div>
   </Link>
 );

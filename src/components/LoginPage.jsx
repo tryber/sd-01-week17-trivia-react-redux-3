@@ -10,20 +10,20 @@ class LoginPage extends React.Component {
     this.state = {
       valueEmail: '',
       valueName: '',
-    }
+    };
     this.verifyCamps = this.verifyCamps.bind(this);
     this.registrationData = this.registrationData.bind(this);
   }
 
   registrationData(event, data) {
-    const { value } = event.target
+    const { value } = event.target;
     this.setState({
-      [data]: value
+      [data]: value,
     });
   }
 
   verifyCamps() {
-    return (this.state.valueEmail !== '') && (this.state.valueName !== '')
+    return (this.state.valueEmail !== '') && (this.state.valueName !== '');
   }
 
   render() {
@@ -33,13 +33,14 @@ class LoginPage extends React.Component {
         <div className="initial-page">
           <img src={logo} className="App-logo" alt="logo" />
           <p>SUA VEZ</p>
-            <LinkPageSettings />
-            <InicialForm valueEmail={valueEmail}
+          <LinkPageSettings />
+          <InicialForm 
+            valueEmail={valueEmail}
             onChangeValueEmail={(event) => this.registrationData(event, 'valueEmail')}
             valueName={valueName}
             onChangeValueName={(event) => this.registrationData(event, 'valueName')}
-            />
-          <LinkPageGame disable={this.verifyCamps()}/>
+          />
+          <LinkPageGame disable={this.verifyCamps()} />
         </div>
       </div>
     );
