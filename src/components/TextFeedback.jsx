@@ -6,7 +6,7 @@ const ShowProps = (value) => {
 }
 
 const renderTitleFeedback = (contCorrect) => (
-  <h2>
+  <h2 className="title-feedback">
     {ShowProps(contCorrect)}
   </h2>
 );
