@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ShowProps = (value) => {
   const couch = ['Pessimo', 'Ruim', 'Razoavel', 'Bom', 'Show'];
@@ -32,3 +33,8 @@ const TextFeedback = ({ contCorrect = 2, points = 40 }) => (
 );
 
 export default TextFeedback;
+
+TextFeedback.propTypes = {
+  contCorrect: PropTypes.number.isRequired,
+  points: PropTypes.number.isRequired,
+};
