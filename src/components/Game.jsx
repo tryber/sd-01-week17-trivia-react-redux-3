@@ -5,7 +5,7 @@ const game = () => {
     <div>
       Aguardando Preenchimeno
     </div>
-  )
-}
+  );
+};
 
 export default game;
