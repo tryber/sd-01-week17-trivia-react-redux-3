@@ -12,7 +12,7 @@ const Header = ({
         <img src={srcLink} alt={`${player} gravatar`} />
         <p>{`Jogador: ${player}`}</p>
       </div>
-      <p>{`Pontos: ${score}`}</p>
+      <p data-testid="header-score">{`Pontos: ${score}`}</p>
     </div>
   );
 
