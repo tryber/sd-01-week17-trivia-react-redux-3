@@ -23,7 +23,7 @@ const renderCorrectFeedback = (contCorrect) => (
   </p>
 );
 
-const TextFeedback = ({contCorrect=2, points=40}) => (
+const TextFeedback = ({ contCorrect = 2, points = 40 }) => (
   <div data-testid="feedback-text" className="text-feedback">
     {renderTitleFeedback(contCorrect)}
     {renderCorrectFeedback(contCorrect)}
