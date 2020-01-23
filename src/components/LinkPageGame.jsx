@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchToken } from '../actions'
+import { fetchToken } from '../actions';
 import './LinkPageGame.css';
 
 class LinkPageGame extends React.Component {
@@ -19,16 +19,17 @@ class LinkPageGame extends React.Component {
         Iniciar o jogo
       </Link>
     );
-  };
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getToken: () => dispatch(fetchToken())
-}) 
+  getToken: () => dispatch(fetchToken()),
+});
 
 
 export default connect(null, mapDispatchToProps)(LinkPageGame);
 
 LinkPageGame.propTypes = {
   disable: PropTypes.bool.isRequired,
+  getToken: PropTypes.string.isRequired,
 };
