@@ -3,7 +3,7 @@ export const setNewPlayer = (player) => {
   localStorage.setItem('player', itemJson);
 };
 
-export const setRanking = (rank=[]) => {
+export const setRanking = (rank = []) => {
   const itemJson = JSON.stringify(rank);
   localStorage.setItem('ranking', itemJson);
 };
@@ -15,7 +15,7 @@ export const getRanking = () => {
 
 export const UpdateRanking = (value) => {
   const ranking = getRanking();
-  ranking.push(value)
+  ranking.push(value);
   setRanking(ranking);
 };
 
