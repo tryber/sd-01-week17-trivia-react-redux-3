@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Question = (category, question) => (
+const Question = ({
+  category,
+  question
+}) => (
   <div className="question-camp">
     <div className="category">
       <p data-testid="question-category">{`Categoria: ${category}`}</p>
