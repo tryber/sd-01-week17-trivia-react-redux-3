@@ -1,4 +1,4 @@
-import { getTokenTriviaApi,getQuestionTriviaApi } from '../services/TriviaApi';
+import { getTokenTriviaApi, getQuestionTriviaApi } from '../services/TriviaApi';
 
 export const RECEIVE_TOKEN_SUCCESS = 'RECEIVE_TOKEN_SUCCESS';
 export const RECEIVE_TOKEN_FAILURE = 'RECEIVE_TOKEN_FAILURE';
