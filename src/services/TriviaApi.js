@@ -9,12 +9,10 @@ export const getTokenTriviaApi = () => (
     ))
 );
 
-const Token = '9baac3a971523f8c946f196ae27b91d99e0f7fbf6c29e400c7c7017s0f3e5529d';
-const NumberAsks = 5;
-const QUESTIONTRIVIA_API = (value, valueToken) => `https://opentdb.com/api.php?amount=${value}&token=${valueToken}`;
+const QUESTIONTRIVIA_API = (valueToken, value) => `https://opentdb.com/api.php?amount=${value}&token=${valueToken}`;
 
-export const getQuestionTriviaApi = () => (
-  fetch(`${QUESTIONTRIVIA_API(NumberAsks, Token)}`)
+export const getQuestionTriviaApi = (tokenPlayer, numQuestions = 5) => (
+  fetch(`${QUESTIONTRIVIA_API(tokenPlayer, numQuestions)}`)
     .then((response) => (
       response
         .json()
