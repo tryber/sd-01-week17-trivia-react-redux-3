@@ -57,3 +57,22 @@ export function fetchQuestion(NumberAsks, Token) {
       );
   };
 }
+
+export const ADD_NAME = 'ADD_NAME';
+export const ADD_EMAIL = 'ADD_EMAIL';
+export const LINK_IMAGE = 'LINK_IMAGE';
+
+export const addName = (name) => ({
+  type: ADD_NAME,
+  name,
+});
+
+export const addEmail = (email) => ({
+  type: ADD_EMAIL,
+  email,
+});
+
+export const linkImage = (linkImage) => ({
+  type: LINK_IMAGE,
+  linkImage,
+});
