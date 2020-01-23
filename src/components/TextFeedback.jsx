@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ShowProps = (value) => {
-  const couch = ['Pessimo', 'Ruim', 'Razoavel', 'Bom', 'Show'];
-  return couch[value];
-};
+const ShowProps = (value) =>(value < 3)?"Podia ser melhor...": "Mandou bem!";
 
 const renderTitleFeedback = (contCorrect) => (
   <h2 className="title-feedback">
