@@ -7,12 +7,25 @@ const Header = ({
   player = 'João',
   score = 20,
 }) => (
-  <div className="background-header">
-    <div className="photo-and-name-player">
-      <img src={srcLink} alt={`${player} gravatar`} />
-      <p data-testid="header-player-name">{`Jogador: ${player}`}</p>
+  <div className="Header_background-header">
+    <div className="Header_photo-and-name-player">
+      <img 
+      className="Header_photo"
+      src={srcLink}
+      alt={`${player} gravatar`}
+    />
+      <p
+      className="Header_paragraph"
+      data-testid="header-player-name"
+    >
+      {`Jogador: ${player}`}
+      </p>
     </div>
-    <p data-testid="header-score">{`Pontos: ${score}`}</p>
+    <p className="Header_paragraph"
+    data-testid="header-score"
+    >
+    {`Pontos: ${score}`}
+    </p>
   </div>
   );
 

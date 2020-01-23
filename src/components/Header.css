@@ -1,4 +1,4 @@
-.background-header {
+.Header_background-header {
   align-items: center;
   background-color: rgb(56, 56, 56);
   color: white;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-img {
+.Header_photo {
   border-radius: 100px;
 }
 
@@ -17,7 +17,7 @@ p {
   padding-left: 10px;
 }
 
-.photo-and-name-player {
+.Header_photo-and-name-player {
   align-items: center;
   display: flex;
   flex-wrap: nowrap;
