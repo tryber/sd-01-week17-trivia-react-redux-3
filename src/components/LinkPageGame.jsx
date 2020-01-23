@@ -6,7 +6,7 @@ import { fetchToken } from '../actions'
 import './LinkPageGame.css';
 
 class LinkPageGame extends React.Component {
-  componentDidMount = () => {
+  componentDidMount() {
     const { getToken } = this.props;
     getToken();
   }
