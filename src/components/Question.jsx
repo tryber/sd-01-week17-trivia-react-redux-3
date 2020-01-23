@@ -1,14 +1,15 @@
 import React from 'react';
+import './Question.css'
 
 const Question = ({
-  category,
-  question
+  category='Mágica',
+  question='Um Ninho de mafagafos com sete mafagafinhos. Quem desmafaguifar o ninho dos mafagagos, bom desmafaguifador...?'
 }) => (
-  <div className="question-camp">
-    <div className="category">
+  <div className="Question_camp">
+    <div className="Question_category">
       <p data-testid="question-category">{`Categoria: ${category}`}</p>
     </div>
-    <div className="question">
+    <div className="Question_text">
       <p data-testid="question-text">{question}</p>
     </div>
   </div>
