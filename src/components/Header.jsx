@@ -22,8 +22,8 @@ const Header = ({
       </p>
     </div>
     <p
-    className="Header_paragraph"
-    data-testid="header-score"
+      className="Header_paragraph"
+      data-testid="header-score"
     >
       {`Pontos: ${score}`}
     </p>
