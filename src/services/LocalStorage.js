@@ -19,6 +19,14 @@ export const UpdateRanking = (value) => {
   setRanking(ranking);
 };
 
+export const setLocalTokenRanking = (token) => {
+  localStorage.setItem('token', token);
+};
+
+export const getLocalTokenRanking = () => {
+  localStorage.getItem('token');
+};
+
 // export const AllItens = () => {
 //   const arrKeys = Object.keys(localStorage).filter((keys) => keys.includes('MLB'));
 //   const itens = arrKeys.map((key) => getItem(key));
