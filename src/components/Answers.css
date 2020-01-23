@@ -1,0 +1,25 @@
+.Answers_all {
+	display: flex;
+	flex-direction: column;
+}
+
+.Answer_button {
+	background-color: grey;
+	border-radius: 13px;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 28px;
+	font-weight: 100;
+	margin: 1%;
+	padding: 1%;
+	text-align: center;
+	text-decoration: none;
+}
+
+.Answer_button:hover {
+	background: gray;
+	background-image: linear-gradient(to bottom, #959595, #B3B3B3);
+	border-radius: 13px;
+	text-decoration: none;
+}
