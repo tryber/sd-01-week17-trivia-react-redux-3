@@ -14,7 +14,7 @@ const Header = ({
     </div>
     <p data-testid="header-score">{`Pontos: ${score}`}</p>
   </div>
-);
+  );
 
 export default Header;
 
