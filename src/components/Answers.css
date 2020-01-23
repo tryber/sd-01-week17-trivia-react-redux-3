@@ -23,3 +23,24 @@
 	border-radius: 13px;
 	text-decoration: none;
 }
+
+.Button_next-answer {
+	border-radius: 13px;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: 100;
+	padding: 14px;
+	background-color: #3EA540;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+}
+
+.Button_next-answer:hover {
+	background: #1EAB20;
+	background-image: linear-gradient(to bottom, #1EAB20, #6AD56B);
+	border-radius: 13px;
+	text-decoration: none;
+}
