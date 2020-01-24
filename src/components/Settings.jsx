@@ -54,7 +54,7 @@ class Settings extends React.Component {
       </div>
     );
   }
-};
+}
 
 const mapDispatchToProps = (dispatch) => ({
   setSettings: (value) => dispatch(addSettings(value)),
