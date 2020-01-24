@@ -1,4 +1,6 @@
-export const getTokenTriviaApi = (URL = 'https://opentdb.com/api_token.php?command=request') => (
+const URL = 'https://opentdb.com/api_token.php?command=request';
+
+export const getTokenTriviaApi = () => (
   fetch(`${URL}`)
     .then((response) => (
       response
