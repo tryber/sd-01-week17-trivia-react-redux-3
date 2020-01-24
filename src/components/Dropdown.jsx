@@ -53,7 +53,7 @@ const renderInput = (value, func) => {
     type: renderInputType(func),
     difficulty: renderInputDifficulty(func),
     category: renderInputCategory(func),
-  }
+  };
   return inputs[value];
 };
 
@@ -62,7 +62,7 @@ const renderLabel = (value) => {
     type: <label htmlFor="a" className="labels">Tipo:</label>,
     difficulty: <label htmlFor="b" className="labels">Dificuldade:</label>,
     category: <label htmlFor="c" className="labels">Categoria:</label>,
-  }
+  };
   return label[value];
 };
 

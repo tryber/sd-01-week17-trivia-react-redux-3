@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addSettings } from '../actions'
+import { addSettings } from '../actions';
 import Dropdown from './Dropdown';
 import './Settings.css';
 
@@ -12,34 +12,35 @@ class Settings extends React.Component {
       type: '',
       difficulty: '',
       category: '',
-    }
+    };
 
     this.changeCategory = this.changeCategory.bind(this);
     this.changeDifficulty = this.changeDifficulty.bind(this);
     this.changeType = this.changeType.bind(this);
-  }
+  };
 
   componentWillUnmount() {
     const { setSettings } = this.props;
-    setSettings({ ...this.state })
-  }
+    setSettings({ ...this.state });
+  };
+
   changeType(newValue) {
     this.setState({
       type: newValue,
-    })
-  }
+    });
+  };
 
   changeDifficulty(newValue) {
     this.setState({
       difficulty: newValue,
-    })
-  }
+    });
+  };
 
   changeCategory(newValue) {
     this.setState({
       category: newValue,
-    })
-  }
+    });
+  };
 
 
   render() {
@@ -51,9 +52,9 @@ class Settings extends React.Component {
         <Dropdown type="type" onChange={(value) => this.changeType(value)} />
         <Link to="/" className="back" >Back</Link>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   setSettings: (value) => dispatch(addSettings(value)),
