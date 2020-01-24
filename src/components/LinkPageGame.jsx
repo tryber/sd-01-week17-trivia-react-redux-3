@@ -8,12 +8,12 @@ import './LinkPageGame.css';
 class LinkPageGame extends React.Component {
   render() {
     const { disable, getToken, isFetching, token } = this.props;
-    if (token) return <Redirect to="/game" />
+    if (token) return <Redirect to="/game" />;
     return (
       <div>
         <input
           type="button"
-          value={(isFetching ? "Carregando" : "Jogar")}
+          value={(isFetching ? 'Carregando' : 'Jogar')}
           className="link-game"
           onClick={() => getToken()}
           data-testid="btn-play"
@@ -45,4 +45,4 @@ LinkPageGame.propTypes = {
 LinkPageGame.defaultProps = {
   token: '',
   isFetching: false,
-}
+};
