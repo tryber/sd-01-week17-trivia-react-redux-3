@@ -5,7 +5,6 @@ import {
 const INITIAL_QUESTION = '';
 
 const Url = (state = INITIAL_QUESTION, action) => {
-  console.log(action)
   switch (action.type) {
     case ADD_URL:
       return { state: action.URL };

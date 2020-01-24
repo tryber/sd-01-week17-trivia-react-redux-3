@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addURL } from '../actions'
+import { addURL } from '../actions';
+import PropTypes from 'prop-types';
 import logo from '../trivia.png';
 import InicialForm from './InicialForm';
 import LinkPageSettings from './LinkPageSettings';
@@ -46,7 +47,7 @@ class LoginPage extends React.Component {
   }
 
   createUrl() {
-    const { setUrl, token } = this.props
+    const { setUrl, token } = this.props;
     const Url = `https://opentdb.com/api.php?amount=5&token=${token}${this.categoryUrl()}${this.difficultyUrl()}${this.typeUrl()}`;
     setUrl(Url);
   }
@@ -87,10 +88,21 @@ class LoginPage extends React.Component {
 const mapStateToProps = ({ Settings, Token: { token } }) => ({
   Settings,
   token,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setUrl: (value) => dispatch(addURL(value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+
+LoginPage.propTypes = {
+  setUrl: PropTypes.func.isRequired,
+  Settings: PropTypes.shape({
+    category: PropTypes.string,
+    type: PropTypes.string,
+    difficulty: PropTypes.string,
+  }).isRequired,
+  setUrl: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired,
+};
