@@ -1,10 +1,21 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
+
+.Game_screen{
+  width: 100%;
+}
 
 .Game_playing {
-  display: flex;
   background-color: #282c34;
-  /* flex-wrap: nowrap; */
-  justify-content: space-evenly;  
+  display: flex;
+  justify-content: space-around;
+  width: 100%
+}
+
+.Game_answers-and-next {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
