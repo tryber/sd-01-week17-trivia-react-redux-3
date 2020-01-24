@@ -1,6 +1,6 @@
 import React from 'react';
 import ButtonAnswer from './ButtonAnswers';
-import PropTypes from 'prop-types';
+import { PropTypes } from 'prop-types';
 import './Answers.css';
 
 const Answers = ({
@@ -22,6 +22,6 @@ const Answers = ({
 export default Answers;
 
 Answers.propTypes = {
-  correct: PropTypes.string,
-  incorrects: PropTypes.array.isRequired,
+  correct: PropTypes.string.isRequired,
+  incorrects: PropTypes.array,
 };
