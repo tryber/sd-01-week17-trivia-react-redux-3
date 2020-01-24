@@ -21,4 +21,4 @@ export default Question;
 Question.propTypes = {
   category: PropTypes.string.isRequired,
   question: PropTypes.string.isRequired,
-}
+};
