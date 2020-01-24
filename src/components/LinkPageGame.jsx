@@ -38,4 +38,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(LinkPageGame);
 LinkPageGame.propTypes = {
   disable: PropTypes.bool.isRequired,
   getToken: PropTypes.func.isRequired,
+  token: PropTypes.string,
+  isFetching: PropTypes.bool,
 };
+
+LinkPageGame.defaultProps = {
+  token: '',
+  isFetching: false,
+}
