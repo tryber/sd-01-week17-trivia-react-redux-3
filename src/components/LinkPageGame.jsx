@@ -31,5 +31,5 @@ export default connect(null, mapDispatchToProps)(LinkPageGame);
 
 LinkPageGame.propTypes = {
   disable: PropTypes.bool.isRequired,
-  getToken: PropTypes.string.isRequired,
+  getToken: PropTypes.func.isRequired,
 };
