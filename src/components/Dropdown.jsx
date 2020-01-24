@@ -6,8 +6,8 @@ const testid1 = 'question-category-dropdown';
 const testid2 = 'question-difficulty-dropdown';
 const testid3 = 'question-type-dropdown';
 
-const renderInputCategory = (changeCategory) => (
-  <select id="a" className="slc" data-testid={testid1} onChange={(e) => changeCategory(e.target.value)}>
+const renderInputCategory = (updCategory) => (
+  <select id="a" className="slc" data-testid={testid1} onChange={(e) => updCategory(e.target.value)}>
     <option value="">Any Category</option>
     <option value="9">General Knowledge</option>
     <option value="10">Entertainment: Books</option>
@@ -30,8 +30,8 @@ const renderInputCategory = (changeCategory) => (
   </select>
 );
 
-const renderInputDifficulty = (changeDifficulty) => (
-  <select id="b" className="slc" data-testid={testid2} onChange={(e) => changeDifficulty(e.target.value)} >
+const renderInputDifficulty = (updDifficulty) => (
+  <select id="b" className="slc" data-testid={testid2} onChange={(e) => updDifficulty(e.target.value)} >
     <option value="">Any Difficulty</option>
     <option value="easy">Easy</option>
     <option value="medium">Medium</option>
@@ -39,8 +39,8 @@ const renderInputDifficulty = (changeDifficulty) => (
   </select>
 );
 
-const renderInputType = (changeType) => (
-  <select id="c" className="slc" data-testid={testid3} onChange={(e) => changeType(e.target.value)}>
+const renderInputType = (updType) => (
+  <select id="c" className="slc" data-testid={testid3} onChange={(e) => updType(e.target.value)}>
     <option value="">Any Type</option>
     <option value="multiple">Multiple Choice</option>
     <option value="boolean">True / False</option>
