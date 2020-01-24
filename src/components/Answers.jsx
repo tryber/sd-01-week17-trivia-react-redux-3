@@ -4,7 +4,7 @@ import './Answers.css'
 
 const Answers = ({
   correct = 'Será',
-  incorrects = ['Ele é', 'Voará', 'Desmafaguifou'],
+  incorrects = ['Ele é', 'Voará', 'As pessoas boas devem amar seus inimigos'],
 }) => {
   const allAnswers = [...incorrects]
   const randomIndex = Math.floor(Math.random() * 3.49);

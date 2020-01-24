@@ -1,0 +1,10 @@
+/* * {
+  outline: 1px solid red;
+} */
+
+.Game_playing {
+  display: flex;
+  background-color: #282c34;
+  /* flex-wrap: nowrap; */
+  justify-content: space-evenly;  
+}

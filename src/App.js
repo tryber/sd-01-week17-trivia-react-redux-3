@@ -5,13 +5,12 @@ import Settings from './components/Settings';
 import Game from './components/Game';
 import Feedback from './components/Feedback';
 import './App.css';
-import NextButton from './components/NextButton';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={NextButton} />
+        <Route exact path="/" component={Game} />
         <Route path="/settings" component={Settings} />
         <Route exact path="/game" component={Game} />
         <Route exact path="/game/feedback" component={Feedback} />
