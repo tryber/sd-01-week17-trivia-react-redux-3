@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addURL } from '../actions';
-import PropTypes from 'prop-types';
 import logo from '../trivia.png';
 import InicialForm from './InicialForm';
 import LinkPageSettings from './LinkPageSettings';
@@ -103,6 +103,5 @@ LoginPage.propTypes = {
     type: PropTypes.string,
     difficulty: PropTypes.string,
   }).isRequired,
-  setUrl: PropTypes.func.isRequired,
   token: PropTypes.string.isRequired,
 };
