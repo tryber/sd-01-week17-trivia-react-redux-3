@@ -7,10 +7,10 @@
 }
 
 .Dropdown .labels {
-  text-align: left;
   font-family: Roboto, Arial, sans-serif;
   font-size: 31px;
   font-weight: 700;
+  text-align: left;
 }
 
 .Dropdown .slc {

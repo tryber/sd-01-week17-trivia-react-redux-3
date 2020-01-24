@@ -19,6 +19,10 @@ class Settings extends React.Component {
     this.changeType = this.changeType.bind(this);
   }
 
+  componentWillUnmount() {
+    const { setSettings } = this.props;
+    setSettings({ ...this.state })
+  }
   changeType(newValue) {
     this.setState({
       type: newValue,
@@ -37,10 +41,6 @@ class Settings extends React.Component {
     })
   }
 
-  componentWillUnmount(){
-    const { setSettings } = this.props;
-    setSettings({...this.state})
-  }
 
   render() {
     return (

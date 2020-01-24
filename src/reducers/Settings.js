@@ -1,5 +1,5 @@
 import {
-  ADD_SETTINGS
+  ADD_SETTINGS,
 } from '../actions';
 
 const INITIAL_QUESTION = {};

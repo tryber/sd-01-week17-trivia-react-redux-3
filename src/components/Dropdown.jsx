@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Dropdown.css';
 
-const testid1 = "question-category-dropdown"
-const testid2 = "question-difficulty-dropdown"
-const testid3 = "question-type-dropdown"
+const testid1 = 'question-category-dropdown';
+const testid2 = 'question-difficulty-dropdown';
+const testid3 = 'question-type-dropdown';
 
 const renderInputCategory = (changeCategory) => (
-  <select className="slc" data-testid={testid1} onChange={(e) => changeCategory(e.target.value)}>
+  <select id="a" className="slc" data-testid={testid1} onChange={(e) => changeCategory(e.target.value)}>
     <option value="">Any Category</option>
     <option value="9">General Knowledge</option>
     <option value="10">Entertainment: Books</option>
@@ -27,24 +28,24 @@ const renderInputCategory = (changeCategory) => (
     <option value="27">Animals</option>
     <option value="28">Vehicles</option>
   </select>
-)
+);
 
 const renderInputDifficulty = (changeDifficulty) => (
-  <select className="slc" data-testid={testid2} onChange={(e) => changeDifficulty(e.target.value)} >
+  <select id="b" className="slc" data-testid={testid2} onChange={(e) => changeDifficulty(e.target.value)} >
     <option value="">Any Difficulty</option>
     <option value="easy">Easy</option>
     <option value="medium">Medium</option>
     <option value="hard">Hard</option>
   </select>
-)
+);
 
 const renderInputType = (changeType) => (
-  <select className="slc" data-testid={testid3} onChange={(e) => changeType(e.target.value)}>
+  <select id="c" className="slc" data-testid={testid3} onChange={(e) => changeType(e.target.value)}>
     <option value="">Any Type</option>
     <option value="multiple">Multiple Choice</option>
     <option value="boolean">True / False</option>
   </select>
-)
+);
 
 
 const renderInput = (value, func) => {
@@ -54,16 +55,16 @@ const renderInput = (value, func) => {
     category: renderInputCategory(func),
   }
   return inputs[value];
-}
+};
 
 const renderLabel = (value) => {
   const label = {
-    type: <label className="labels">Tipo:</label>,
-    difficulty: <label className="labels">Dificuldade:</label>,
-    category: <label className="labels">Categoria:</label>,
+    type: <label htmlFor="a" className="labels">Tipo:</label>,
+    difficulty: <label htmlFor="b" className="labels">Dificuldade:</label>,
+    category: <label htmlFor="c" className="labels">Categoria:</label>,
   }
   return label[value];
-}
+};
 
 const Dropdown = ({ type, onChange }) => (
   <div className="Dropdown">
@@ -72,5 +73,9 @@ const Dropdown = ({ type, onChange }) => (
   </div>
 );
 
-
 export default Dropdown;
+
+Dropdown.propTypes = {
+  type: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
