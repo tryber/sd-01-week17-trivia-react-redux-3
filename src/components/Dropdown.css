@@ -1,0 +1,19 @@
+.Dropdown {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  margin: 15px;
+  width: 685px;
+}
+
+.Dropdown .labels {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 31px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.Dropdown .slc {
+  font-size: 18px;
+  padding: 10px;
+}
