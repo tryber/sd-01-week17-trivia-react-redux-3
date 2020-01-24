@@ -26,7 +26,6 @@ const mapDispatchToProps = (dispatch) => ({
   getToken: () => dispatch(fetchToken()),
 });
 
-
 export default connect(null, mapDispatchToProps)(LinkPageGame);
 
 LinkPageGame.propTypes = {

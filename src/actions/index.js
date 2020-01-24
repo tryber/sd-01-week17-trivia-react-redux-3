@@ -60,7 +60,7 @@ export function fetchQuestion(NumberAsks, Token) {
 
 export const ADD_NAME = 'ADD_NAME';
 export const ADD_EMAIL = 'ADD_EMAIL';
-export const LINK_IMAGE = 'LINK_IMAGE';
+export const ADD_LINK_IMAGE = 'ADD_LINK_IMAGE';
 
 export const addName = (name) => ({
   type: ADD_NAME,
@@ -72,7 +72,7 @@ export const addEmail = (email) => ({
   email,
 });
 
-export const linkImage = (linkImage) => ({
-  type: LINK_IMAGE,
+export const addLinkImage = (linkImage) => ({
+  type: ADD_LINK_IMAGE,
   linkImage,
 });

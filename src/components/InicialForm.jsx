@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const inicialForm = (props) => {
   const { valueEmail, valueName, onChangeValueEmail, onChangeValueName } = props;
@@ -27,7 +28,15 @@ const inicialForm = (props) => {
   );
 };
 
-export default inicialForm;
+const mapDispatchToProps = (dispatch) => ({
+
+});
+
+const mapStateToProps = (state) => ({
+  
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(inicialForm);
 
 inicialForm.propTypes = {
   onChangeValueEmail: PropTypes.func.isRequired,
