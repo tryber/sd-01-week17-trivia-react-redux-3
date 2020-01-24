@@ -1,0 +1,17 @@
+.Question_camp {
+  background-color: #282c34;
+  margin: 10px;
+  padding: 2%;
+  width: 20%;
+}
+
+.Question_category {
+  background-color: rgb(216, 216, 216);
+  padding: 1%;
+}
+
+.Question_text {
+  background-color: rgb(216, 216, 216);
+  padding: 1%;
+  word-break: normal;
+}

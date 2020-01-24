@@ -1,0 +1,17 @@
+.Game_screen {
+  width: 100%;
+}
+
+.Game_playing {
+  background-color: #282c34;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.Game_answers-and-next {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
