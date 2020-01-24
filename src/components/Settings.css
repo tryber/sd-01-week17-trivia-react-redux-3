@@ -1,0 +1,18 @@
+.Settings {
+  align-items: center;
+  background: white;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 474px;
+  text-align: center;
+  width: 792px;
+}
+
+.Settings .back{
+  background: grey;
+  border: 1px solid black;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+}

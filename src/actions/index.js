@@ -57,3 +57,12 @@ export function fetchQuestion(NumberAsks, Token) {
       );
   };
 }
+
+export const ADD_SETTINGS = 'ADD_SETTINGS';
+
+export const addSettings = (value) => {
+  return {
+    type: ADD_SETTINGS,
+    value,
+  }
+}
