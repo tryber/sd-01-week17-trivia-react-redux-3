@@ -26,16 +26,16 @@
 }
 
 .Button_next-answer {
+	background-color: #3EA540;
 	border-radius: 13px;
 	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
 	font-family: Arial;
 	font-weight: 100;
 	padding: 14px;
-	background-color: #3EA540;
-	text-decoration: none;
-	display: inline-block;
-	cursor: pointer;
 	text-align: center;
+	text-decoration: none;
 }
 
 .Button_next-answer:hover {
