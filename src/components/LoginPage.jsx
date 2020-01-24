@@ -6,7 +6,6 @@ import logo from '../trivia.png';
 import InicialForm from './InicialForm';
 import LinkPageSettings from './LinkPageSettings';
 import LinkPageGame from './LinkPageGame';
-import store from '../store'
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -26,21 +25,18 @@ class LoginPage extends React.Component {
 
   categoryUrl() {
     const { Settings: { category } } = this.props;
-    console.log(category, 'category', category === undefined);
     if (category === undefined || category === '') return '';
     return `&category=${category}`;
   }
 
   difficultyUrl() {
     const { Settings: { difficulty } } = this.props;
-    console.log(difficulty, 'difficulty', difficulty === undefined, difficulty === '');
     if (difficulty === undefined || difficulty === '') return '';
     return `&difficulty=${difficulty}`;
   }
 
   typeUrl() {
     const { Settings: { type } } = this.props;
-    console.log(type, 'type', type === undefined);
     if (type === undefined || type === '') return '';
     return `&type=${type}`;
   }
@@ -70,7 +66,6 @@ class LoginPage extends React.Component {
   render() {
     const { valueEmail, valueName } = this.state;
     this.createUrl();
-    console.log(store.getState());
     return (
       <div className="App">
         <div className="initial-page">
