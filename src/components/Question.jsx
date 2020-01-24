@@ -2,17 +2,17 @@ import React from 'react';
 import './Question.css'
 
 const Question = ({
-  category='Mágica',
-  question='Um Ninho de mafagafos com sete mafagafinhos. Quem desmafaguifar o ninho dos mafagagos, bom desmafaguifador...?'
+  category = 'Mágica',
+  question = 'Um Ninho de mafagafos com sete mafagafinhos. Quem desmafaguifar o ninho dos mafagagos, bom desmafaguifador...?',
 }) => (
-  <div className="Question_camp">
-    <div className="Question_category">
-      <p data-testid="question-category">{`Categoria: ${category}`}</p>
+    <div className="Question_camp">
+      <div className="Question_category">
+        <p data-testid="question-category">{`Categoria: ${category}`}</p>
+      </div>
+      <div className="Question_text">
+        <p data-testid="question-text">{question}</p>
+      </div>
     </div>
-    <div className="Question_text">
-      <p data-testid="question-text">{question}</p>
-    </div>
-  </div>
-);
+  );
 
 export default Question;

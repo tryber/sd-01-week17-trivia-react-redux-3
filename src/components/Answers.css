@@ -20,27 +20,27 @@
 
 .Answer_button:hover {
 	background: gray;
-	background-image: linear-gradient(to bottom, #959595, #B3B3B3);
+	background-image: linear-gradient(to bottom, #959595, #b3b3b3);
 	border-radius: 13px;
 	text-decoration: none;
 }
 
 .Button_next-answer {
-	background-color: #3EA540;
+	background-color: #3ea540;
 	border-radius: 13px;
-	color: #FFFFFF;
+	color: #ffffff;
 	cursor: pointer;
 	display: inline-block;
-	font-family: Arial;
 	font-weight: 100;
+	margin: 50px;
 	padding: 14px;
 	text-align: center;
 	text-decoration: none;
 }
 
 .Button_next-answer:hover {
-	background: #1EAB20;
-	background-image: linear-gradient(to bottom, #1EAB20, #6AD56B);
+	background: #1eab20;
+	background-image: linear-gradient(to bottom, #1eab20, #6ad56b);
 	border-radius: 13px;
 	text-decoration: none;
 }

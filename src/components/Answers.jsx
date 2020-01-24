@@ -24,4 +24,4 @@ export default Answers;
 Answers.propTypes = {
   correct: PropTypes.string,
   incorrects: PropTypes.array.isRequired,
-}
+};

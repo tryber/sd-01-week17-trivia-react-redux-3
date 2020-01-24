@@ -13,8 +13,8 @@ class Game extends React.Component {
         <div className="Game_playing">
           <Question />
           <div className="Game_answers-and-next">
-          <Answers />
-          <NextButton />
+            <Answers />
+            <NextButton />
           </div>
         </div>
       </div>
