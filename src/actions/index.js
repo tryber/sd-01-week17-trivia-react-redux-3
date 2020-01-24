@@ -64,3 +64,10 @@ export const addSettings = (value) => ({
   type: ADD_SETTINGS,
   value,
 });
+
+export const ADD_URL = 'ADD_URL';
+
+export const addURL = (URL) => ({
+  type: ADD_URL,
+  URL,
+});
