@@ -41,7 +41,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
 
-Dropdown.propTypes = {
+Game.propTypes = {
   url: PropTypes.string.isRequired,
   getQuestions: PropTypes.func.isRequired,
 };
