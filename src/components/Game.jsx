@@ -7,31 +7,58 @@ import Answers from './Answers';
 import NextButton from './NextButton';
 import { fetchQuestion } from '../actions';
 import './Game.css';
+import store from '../store'
 
 class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    }
+
+    this.renderGame = this.renderGame.bind(this);
+    this.renderLoadingScreen = this.renderLoadingScreen.bind(this);
+  }
   componentWillMount() {
     const { url, getQuestions } = this.props;
     getQuestions(url);
   }
 
+  renderGame() {
+    return (
+      <div className="Game_playing">
+        <Question />
+        <div className="Game_answers-and-next">
+          <Answers />
+          <NextButton />
+        </div>
+      </div>
+    )
+  }
+
+  renderLoadingScreen() {
+    return (
+      <div className="Loading">
+        <h2>Carregando</h2>
+      </div>
+    )
+  }
+
   render() {
+    const { isFetching } = this.props;
     return (
       <div className="Game_screen">
         <Header />
-        <div className="Game_playing">
-          <Question />
-          <div className="Game_answers-and-next">
-            <Answers />
-            <NextButton />
-          </div>
-        </div>
+        {(isFetching ? this.renderLoadingScreen() : this.renderGame())}
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ Url: { state } }) => ({
+const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data }  }) => ({
   url: state,
+  isFetching,
+  data,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -44,4 +71,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Game);
 Game.propTypes = {
   url: PropTypes.string.isRequired,
   getQuestions: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    response_code: PropTypes.number.isRequired,
+    results: PropTypes.shape().isRequired
+  }).isRequired
 };
