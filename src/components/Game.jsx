@@ -37,7 +37,8 @@ class Game extends React.Component {
   }
 
   render() {
-    const { isFetching } = this.props;
+    const { isFetching, data } = this.props;
+    console.log(data)
     return (
       <div className="Game_screen">
         <Header />
