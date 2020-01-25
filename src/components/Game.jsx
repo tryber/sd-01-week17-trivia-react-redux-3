@@ -7,18 +7,15 @@ import Answers from './Answers';
 import NextButton from './NextButton';
 import { fetchQuestion } from '../actions';
 import './Game.css';
-import store from '../store'
 
 class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
 
-    }
-
-    this.renderGame = this.renderGame.bind(this);
-    this.renderLoadingScreen = this.renderLoadingScreen.bind(this);
+    };
   }
+
   componentWillMount() {
     const { url, getQuestions } = this.props;
     getQuestions(url);
@@ -33,7 +30,7 @@ class Game extends React.Component {
           <NextButton />
         </div>
       </div>
-    )
+    );
   }
 
   renderLoadingScreen() {
@@ -41,7 +38,7 @@ class Game extends React.Component {
       <div className="Loading">
         <h2>Carregando</h2>
       </div>
-    )
+    );
   }
 
   render() {
@@ -73,6 +70,7 @@ Game.propTypes = {
   getQuestions: PropTypes.func.isRequired,
   data: PropTypes.shape({
     response_code: PropTypes.number.isRequired,
-    results: PropTypes.shape().isRequired
-  }).isRequired
+    results: PropTypes.shape().isRequired,
+  }).isRequired,
+  isFetching: PropTypes.bool.isRequired,
 };
