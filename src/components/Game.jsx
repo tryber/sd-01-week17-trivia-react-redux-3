@@ -17,7 +17,6 @@ class Game extends React.Component {
     };
 
     this.renderGame = this.renderGame.bind(this);
-    this.renderLoadingScreen = this.renderLoadingScreen.bind(this);
   }
 
   componentWillMount() {
@@ -48,7 +47,7 @@ class Game extends React.Component {
   }
 }
 
-const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data }  }) => ({
+const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data } }) => ({
   url: state,
   isFetching,
   data,
@@ -68,4 +67,5 @@ Game.propTypes = {
     response_code: PropTypes.number.isRequired,
     results: PropTypes.shape().isRequired,
   }).isRequired,
+  isFetching : PropTypes.bool.isRequired,
 };
