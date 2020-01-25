@@ -38,7 +38,7 @@ class Game extends React.Component {
 
   render() {
     const { isFetching, data } = this.props;
-    console.log(data)
+    console.log(data);
     return (
       <div className="Game_screen">
         <Header />
@@ -68,5 +68,5 @@ Game.propTypes = {
     response_code: PropTypes.number.isRequired,
     results: PropTypes.shape().isRequired,
   }).isRequired,
-  isFetching : PropTypes.bool.isRequired,
+  isFetching: PropTypes.bool.isRequired,
 };
