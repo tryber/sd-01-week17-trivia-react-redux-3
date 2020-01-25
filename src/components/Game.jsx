@@ -6,17 +6,14 @@ import Answers from './Answers';
 import NextButton from './NextButton';
 import { fetchQuestion } from '../actions'
 import './Game.css';
-import store from '../store'
 
 class Game extends React.Component {
   componentWillMount() {
     const { url, getQuestions } = this.props;
     getQuestions(url);
-    console.log(store.getStat)
   }
 
   render() {
-    console.log(store.getState())
     return (
       <div className="Game_screen">
         <Header />
