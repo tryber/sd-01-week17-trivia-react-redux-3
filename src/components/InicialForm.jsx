@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ADD_NAME, ADD_EMAIL, ADD_LINK_IMAGE } from '../actions';
+import { addName, addEmail, addLinkImage } from '../actions';
 
 const inicialForm = (props) => {
   const { valueEmail, valueName, onChangeValueEmail, onChangeValueName } = props;
