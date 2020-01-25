@@ -12,7 +12,7 @@ class Game extends React.Component {
   componentWillMount() {
     const { url, getQuestions } = this.props;
     getQuestions(url);
-    console.log(store.getState())
+    console.log(store.getStat)
   }
 
   render() {
