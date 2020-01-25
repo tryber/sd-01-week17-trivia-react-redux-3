@@ -37,20 +37,21 @@ const requestQuestion = () => ({
   type: REQUEST_QUESTION,
 });
 
-const receiveQuestionSuccess = ({ results }) => ({
+const receiveQuestionSuccess = (data) => {console.log(data)
+  return{
   type: RECEIVE_QUESTION_SUCCESS,
-  data: results,
-});
+  data,
+}};
 
 const receiveQuestionFailure = (error) => ({
   type: RECEIVE_QUESTION_FAILURE,
   error,
 });
 
-export function fetchQuestion(NumberAsks, Token) {
+export function fetchQuestion(url) {
   return (dispatch) => {
     dispatch(requestQuestion());
-    return getQuestionTriviaApi(NumberAsks, Token)
+    return getQuestionTriviaApi(url)
       .then(
         (data) => dispatch(receiveQuestionSuccess(data)),
         (error) => dispatch(receiveQuestionFailure(error.message)),
