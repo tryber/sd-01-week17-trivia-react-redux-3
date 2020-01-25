@@ -5,6 +5,7 @@ import Header from './Header';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
+import Loading from './Loading';
 import { fetchQuestion } from '../actions';
 import './Game.css';
 
@@ -14,6 +15,9 @@ class Game extends React.Component {
     this.state = {
 
     };
+
+    this.renderGame = this.renderGame.bind(this);
+    this.renderLoadingScreen = this.renderLoadingScreen.bind(this);
   }
 
   componentWillMount() {
@@ -33,26 +37,18 @@ class Game extends React.Component {
     );
   }
 
-  renderLoadingScreen() {
-    return (
-      <div className="Loading">
-        <h2>Carregando</h2>
-      </div>
-    );
-  }
-
   render() {
     const { isFetching } = this.props;
     return (
       <div className="Game_screen">
         <Header />
-        {(isFetching ? renderLoadingScreen() : renderGame())}
+        {(isFetching ? <Loading /> : this.renderGame())}
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data } }) => ({
+const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data }  }) => ({
   url: state,
   isFetching,
   data,
@@ -72,5 +68,4 @@ Game.propTypes = {
     response_code: PropTypes.number.isRequired,
     results: PropTypes.shape().isRequired,
   }).isRequired,
-  isFetching: PropTypes.bool.isRequired,
 };
