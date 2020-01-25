@@ -46,7 +46,7 @@ class Game extends React.Component {
     return (
       <div className="Game_screen">
         <Header />
-        {(isFetching ? this.renderLoadingScreen() : this.renderGame())}
+        {(isFetching ? renderLoadingScreen() : renderGame())}
       </div>
     );
   }
