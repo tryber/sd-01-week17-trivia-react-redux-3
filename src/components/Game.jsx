@@ -52,7 +52,7 @@ class Game extends React.Component {
   }
 }
 
-const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data }  }) => ({
+const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data } }) => ({
   url: state,
   isFetching,
   data,
