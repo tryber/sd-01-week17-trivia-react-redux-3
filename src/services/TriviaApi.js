@@ -1,7 +1,7 @@
-const TOKENTRIVIA_API = 'https://opentdb.com/api_token.php?command=request';
+const URL = 'https://opentdb.com/api_token.php?command=request';
 
 export const getTokenTriviaApi = () => (
-  fetch(`${TOKENTRIVIA_API}`)
+  fetch(`${URL}`)
     .then((response) => (
       response
         .json()
@@ -9,10 +9,8 @@ export const getTokenTriviaApi = () => (
     ))
 );
 
-const QUESTIONTRIVIA_API = (valueToken, value) => `https://opentdb.com/api.php?amount=${value}&token=${valueToken}`;
-
-export const getQuestionTriviaApi = (tokenPlayer, numQuestions = 5) => (
-  fetch(`${QUESTIONTRIVIA_API(tokenPlayer, numQuestions)}`)
+export const getQuestionTriviaApi = (url) => (
+  fetch(url)
     .then((response) => (
       response
         .json()

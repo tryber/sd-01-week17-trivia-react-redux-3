@@ -37,9 +37,9 @@ const requestQuestion = () => ({
   type: REQUEST_QUESTION,
 });
 
-const receiveQuestionSuccess = ({ results }) => ({
+const receiveQuestionSuccess = (data) => ({
   type: RECEIVE_QUESTION_SUCCESS,
-  data: results,
+  data,
 });
 
 const receiveQuestionFailure = (error) => ({
@@ -47,10 +47,10 @@ const receiveQuestionFailure = (error) => ({
   error,
 });
 
-export function fetchQuestion(NumberAsks, Token) {
+export function fetchQuestion(url) {
   return (dispatch) => {
     dispatch(requestQuestion());
-    return getQuestionTriviaApi(NumberAsks, Token)
+    return getQuestionTriviaApi(url)
       .then(
         (data) => dispatch(receiveQuestionSuccess(data)),
         (error) => dispatch(receiveQuestionFailure(error.message)),
@@ -63,4 +63,11 @@ export const ADD_SETTINGS = 'ADD_SETTINGS';
 export const addSettings = (value) => ({
   type: ADD_SETTINGS,
   value,
+});
+
+export const ADD_URL = 'ADD_URL';
+
+export const addURL = (URL) => ({
+  type: ADD_URL,
+  URL,
 });
