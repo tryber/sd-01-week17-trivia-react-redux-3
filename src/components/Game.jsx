@@ -1,10 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Header from './Header';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
-import { fetchQuestion } from '../actions'
+import { fetchQuestion } from '../actions';
 import './Game.css';
 
 class Game extends React.Component {
@@ -39,3 +40,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
+
+Dropdown.propTypes = {
+  url: PropTypes.string.isRequired,
+  getQuestions: PropTypes.func.isRequired,
+};

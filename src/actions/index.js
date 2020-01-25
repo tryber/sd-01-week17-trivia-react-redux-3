@@ -37,11 +37,10 @@ const requestQuestion = () => ({
   type: REQUEST_QUESTION,
 });
 
-const receiveQuestionSuccess = (data) => {console.log(data)
-  return{
+const receiveQuestionSuccess = (data) => ({
   type: RECEIVE_QUESTION_SUCCESS,
   data,
-}};
+});
 
 const receiveQuestionFailure = (error) => ({
   type: RECEIVE_QUESTION_FAILURE,
