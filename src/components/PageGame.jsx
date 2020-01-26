@@ -48,9 +48,9 @@ class PageGame extends React.Component {
   allAnswers() {
     const { questions, contQuestion } = this.state;
     const question = questions[contQuestion];
-    const allAnswers = [...question['incorrect_answers']];
+    const allAnswers = [...question.incorrect_answers];
     const randomIndex = Math.floor(Math.random() * 5);
-    allAnswers.splice(randomIndex, 0, question['correct_answer']);
+    allAnswers.splice(randomIndex, 0, question.correct_answer);
     return allAnswers;
   }
 

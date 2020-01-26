@@ -38,7 +38,7 @@ class Game extends React.Component {
         <div className="Game_answers-and-next">
           <Answers
             allAnswers={allAnswers}
-            correct={question['correct_answer']}
+            correct={question.correct_answer}
             click={clicked}
             changeClicked={() => this.changeClicked()}
           />
