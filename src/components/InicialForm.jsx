@@ -33,9 +33,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-const mapStateToProps = (state) => ({
-
-});
+const mapStateToProps = (state) => ({ teste: state, });
 
 export default connect(mapStateToProps, mapDispatchToProps)(inicialForm);
 
