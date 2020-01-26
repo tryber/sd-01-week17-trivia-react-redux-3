@@ -11,7 +11,7 @@ export default function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LoginPage} />
-        <Route path="/settings" component={Settings} />
+        <Route exact path="/settings" component={Settings} />
         <Route exact path="/game" component={PageGame} />
         <Route exact path="/game/feedback" component={Feedback} />
         {/* <Route path="/game/ranking" component={} /> */}

@@ -22,11 +22,13 @@ class PageGame extends React.Component {
   }
 
   componentWillMount() {
+    console.log('FOI COmpoWILLMOUNT')
     const { url, getQuestions } = this.props;
     getQuestions(url);
   }
 
   componentDidUpdate(prevProps) {
+    console.log('FOI UPDATE')
     if (this.props.data !== prevProps.data) {
       this.setQuestions();
     }
@@ -37,6 +39,7 @@ class PageGame extends React.Component {
     if (data === undefined) return;
     this.setState({
       questions: data.results,
+      response: data.response_code,
     });
   }
 
@@ -70,7 +73,11 @@ class PageGame extends React.Component {
   }
 
   render() {
-    const { contQuestion } = this.state;
+    console.log(this.props.history.action)
+    const { history: { action } } = this.props;
+    const { contQuestion, response } = this.state;
+    if (action === 'POP') return <Redirect to="/" />
+    if (response === 3) return <Redirect to="/" />
     if (contQuestion === 4) return <Redirect to="/Game/Feedback" />
     return (
       <div className="Game_screen">
