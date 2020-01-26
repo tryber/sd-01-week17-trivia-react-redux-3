@@ -108,4 +108,4 @@ LoginPage.propTypes = {
 
 LoginPage.defaultProps = {
   token: '',
-}
+};
