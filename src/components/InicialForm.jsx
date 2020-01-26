@@ -35,9 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
   saveImage: (image) => dispatch(addLinkImage(image)),
 });
 
-const mapStateToProps = (state) => ({
-  teste: state,
-});
+const mapStateToProps = (state) => ({ teste: state, });
 
 export default connect(mapStateToProps, mapDispatchToProps)(inicialForm);
 
