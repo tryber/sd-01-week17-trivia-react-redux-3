@@ -1,72 +1,57 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Header from './Header';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
-import Loading from './Loading';
-import { fetchQuestion } from '../actions';
-import './Game.css';
 
 class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
-    };
-
-    this.renderGame = this.renderGame.bind(this);
+      clicked: false,
+      choice: '',
+    }
+    this.changeClicked = this.changeClicked.bind(this);
+    this.returnClicked = this.returnClicked.bind(this);
   }
 
-  componentWillMount() {
-    const { url, getQuestions } = this.props;
-    getQuestions(url);
+  changeClicked(value) {
+    this.setState(({ clicked }) => ({
+      clicked: !clicked,
+      choice: value,
+    }));
+  }
+
+  returnClicked() {
+    const { changeCont } = this.props
+    this.setState(({ clicked }) => ({
+      clicked: !clicked,
+    }));
+    changeCont();
   }
 
   renderGame() {
+    const { question, allAnswers } = this.props;
+    const { clicked } = this.state;
     return (
       <div className="Game_playing">
-        <Question />
+        <Question category={question.category} text={question.question} />
         <div className="Game_answers-and-next">
-          <Answers />
-          <NextButton />
+          <Answers
+            allAnswers={allAnswers}
+            correct={question['correct_answer']}
+            click={clicked}
+            changeClicked={() => this.changeClicked()}
+          />
+          {clicked && <NextButton changeCont={() => this.returnClicked()} />}
         </div>
       </div>
     );
   }
 
   render() {
-    const { isFetching, data } = this.props;
-    console.log(data);
-    return (
-      <div className="Game_screen">
-        <Header />
-        {(isFetching ? <Loading /> : this.renderGame())}
-      </div>
-    );
+    return (this.renderGame());
   }
 }
 
-const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data } }) => ({
-  url: state,
-  isFetching,
-  data,
-});
+export default Game;
 
-const mapDispatchToProps = (dispatch) => ({
-  getQuestions: (url) => dispatch(fetchQuestion(url)),
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Game);
-
-Game.propTypes = {
-  url: PropTypes.string.isRequired,
-  getQuestions: PropTypes.func.isRequired,
-  data: PropTypes.shape({
-    response_code: PropTypes.number.isRequired,
-    results: PropTypes.shape().isRequired,
-  }).isRequired,
-  isFetching: PropTypes.bool.isRequired,
-};
