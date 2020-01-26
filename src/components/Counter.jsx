@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
   constructor(props) {
@@ -29,7 +30,8 @@ class Counter extends React.Component {
 
   render() {
     const { timer } = this.state;
-    const { clicked } = this.props;
+    const { clicked, difficulty } = this.props;
+    console.log(difficulty)
     return (
       <div>
         {clicked || <p>{`Time: ${timer}`}</p>}
@@ -39,3 +41,9 @@ class Counter extends React.Component {
 }
 
 export default Counter;
+
+
+Counter.propTypes = {
+  clicked: PropTypes.bool.isRequired,
+  difficulty: PropTypes.string.isRequired,
+};
