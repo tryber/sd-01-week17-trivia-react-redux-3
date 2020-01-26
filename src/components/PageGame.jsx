@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from './Header';
 import Game from './Game';
@@ -69,6 +70,8 @@ class PageGame extends React.Component {
   }
 
   render() {
+    const { contQuestion } = this.state;
+    if (contQuestion === 4) return <Redirect to="/Game/Feedback" />
     return (
       <div className="Game_screen">
         <Header />
