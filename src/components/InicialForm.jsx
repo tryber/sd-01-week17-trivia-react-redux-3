@@ -30,11 +30,13 @@ const inicialForm = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-
+  saveName: (name) => dispatch(addName(name)),
+  saveEmail: (email) => dispatch(addEmail(email)),
+  saveImage: (image) => dispatch(addLinkImage(image)),
 });
 
 const mapStateToProps = (state) => ({
-
+  teste: state,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(inicialForm);
