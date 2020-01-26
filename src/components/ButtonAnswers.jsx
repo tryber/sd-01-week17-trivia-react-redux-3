@@ -8,7 +8,7 @@ const verifyCorrect = (value, correctValue) => (
 
 const verifyData = (data) => (
   (data === -1 ? 'correct-answer' : `wrong-answer-${data}`)
-)
+);
 
 const ButtonAnswers = ({ value, correctAnswer, clicked, changeClicked, data }) => (
   <button
@@ -29,4 +29,5 @@ ButtonAnswers.propTypes = {
   correctAnswer: PropTypes.string.isRequired,
   clicked: PropTypes.bool.isRequired,
   changeClicked: PropTypes.func.isRequired,
+  data: PropTypes.number.isRequired,
 };

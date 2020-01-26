@@ -30,15 +30,15 @@ class Counter extends React.Component {
   }
 
   sendValues(valueDifficulty, valueTimer) {
-    const { addDifficulty, addTime } = this.props;
-    addDifficulty(valueDifficulty);
-    addTime(valueTimer);
+    const { addDif, addTimer } = this.props;
+    addDif(valueDifficulty);
+    addTimer(valueTimer);
   }
 
   render() {
     const { timer } = this.state;
     const { clicked, difficulty } = this.props;
-    (clicked || this.sendValues(difficulty, timer));
+    if (clicked) (this.sendValues(difficulty, timer));
     return (
       <div>
         {clicked || <p data-testid="timer">{`Time: ${timer}`}</p>}
@@ -48,8 +48,8 @@ class Counter extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  addTime: (value) => dispatch(addTime(value)),
-  addDifficulty: (value) => dispatch(addDifficulty(value)),
+  addTimer: (value) => dispatch(addTime(value)),
+  addDif: (value) => dispatch(addDifficulty(value)),
 });
 
 export default connect(null, mapDispatchToProps)(Counter);
@@ -57,4 +57,6 @@ export default connect(null, mapDispatchToProps)(Counter);
 Counter.propTypes = {
   clicked: PropTypes.bool.isRequired,
   difficulty: PropTypes.string.isRequired,
+  addTimer: PropTypes.func.isRequired,
+  addDif: PropTypes.func.isRequired,
 };

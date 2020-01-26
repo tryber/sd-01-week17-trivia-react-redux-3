@@ -14,7 +14,6 @@ const sendPoints = (changeCont, Counter, choice, correct) => {
   if (choice === correct) {
     const { difficulty, time } = Counter;
     const point = 10 + (obj[difficulty] * time);
-    console.log(point)
     // addPoints(point);
   } else {
     // addPoints(0);

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import ButtonAnswer from './ButtonAnswers';
 import './Answers.css';
 
-const verifyIncorrects = (incorrects, answer) => {
-  return incorrects.indexOf(answer);
-}
+const verifyIncorrects = (incorrects, answer) => (
+  incorrects.indexOf(answer)
+);
 
 const Answers = (props) => {
   const { allAnswers, correct, click, changeClicked, incorrects } = props;
@@ -32,4 +32,5 @@ Answers.propTypes = {
   correct: PropTypes.string.isRequired,
   changeClicked: PropTypes.func.isRequired,
   click: PropTypes.bool.isRequired,
+  incorrects: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
