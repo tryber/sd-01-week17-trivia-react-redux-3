@@ -9,6 +9,7 @@ const Answers = (props) => {
     <div className="Answers_all">
       {allAnswers.map((answer) => (
         <ButtonAnswer
+          key={answer}
           value={answer}
           changeClicked={changeClicked}
           correctAnswer={correct}

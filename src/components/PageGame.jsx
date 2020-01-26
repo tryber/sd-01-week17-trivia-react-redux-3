@@ -73,6 +73,7 @@ class PageGame extends React.Component {
   render() {
     const { history: { action } } = this.props;
     const { contQuestion, response } = this.state;
+    console.log(this.props.data)
     if (action === 'POP') return <Redirect to="/" />;
     if (response === 3) return <Redirect to="/" />;
     if (contQuestion === 4) return <Redirect to="/Game/Feedback" />;
@@ -103,7 +104,9 @@ PageGame.propTypes = {
   getQuestions: PropTypes.func.isRequired,
   data: PropTypes.shape({
     response_code: PropTypes.number,
-    results: PropTypes.shape(),
+    results: PropTypes.arrayOf(PropTypes.shape({
+      category: PropTypes.string,
+    })),
   }),
   isFetching: PropTypes.bool.isRequired,
   history: PropTypes.shape({
