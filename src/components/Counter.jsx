@@ -12,13 +12,13 @@ class Counter extends React.Component {
   componentDidMount() {
     const { timer } = this.state;
     const { clicked } = this.props;
-    return (timer > 0 && !clicked) || setTimeout(() => this.changeCounter(), 1000);
+    return (timer > 0 && !clicked) && setTimeout(() => this.changeCounter(), 1000);
   }
 
   componentDidUpdate() {
     const { timer } = this.state;
     const { clicked } = this.props;
-    return (timer > 0 && !clicked) || setTimeout(() => this.changeCounter(), 1000);
+    return (timer > 0 && !clicked) && setTimeout(() => this.changeCounter(), 1000);
   }
 
   changeCounter() {
@@ -31,10 +31,10 @@ class Counter extends React.Component {
   render() {
     const { timer } = this.state;
     const { clicked, difficulty } = this.props;
-    console.log(difficulty)
+    console.log(difficulty);
     return (
       <div>
-        {clicked || <p>{`Time: ${timer}`}</p>}
+        {clicked || <p data-testid="timer">{`Time: ${timer}`}</p>}
       </div>
     );
   }

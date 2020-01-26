@@ -6,6 +6,7 @@ const NextButton = ({ changeCont }) => (
   <button
     className="Button_next-answer"
     onClick={() => changeCont()}
+    data-testid="btn-next"
   >
     Próximo
   </button>

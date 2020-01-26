@@ -41,6 +41,7 @@ class Game extends React.Component {
         <Counter clicked={clicked} difficulty={question.difficulty} />
         <div className="Game_answers-and-next">
           <Answers
+            incorrects={question.incorrect_answers}
             allAnswers={allAnswers}
             correct={question.correct_answer}
             click={clicked}

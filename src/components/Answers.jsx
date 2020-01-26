@@ -3,12 +3,17 @@ import PropTypes from 'prop-types';
 import ButtonAnswer from './ButtonAnswers';
 import './Answers.css';
 
+const verifyIncorrects = (incorrects, answer) => {
+  return incorrects.indexOf(answer);
+}
+
 const Answers = (props) => {
-  const { allAnswers, correct, click, changeClicked } = props;
+  const { allAnswers, correct, click, changeClicked, incorrects } = props;
   return (
     <div className="Answers_all">
       {allAnswers.map((answer) => (
         <ButtonAnswer
+          data={verifyIncorrects(incorrects, answer)}
           key={answer}
           value={answer}
           changeClicked={changeClicked}
