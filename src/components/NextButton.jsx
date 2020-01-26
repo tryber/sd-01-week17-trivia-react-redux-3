@@ -8,7 +8,7 @@ const sendPoints = (changeCont, Counter, choice, correct) => {
     easy: 1,
     medium: 2,
     hard: 3,
-  }
+  };
   if (choice === correct) {
     const { difficulty, time } = Counter;
     const point = 10 + (obj[difficulty] * time);
@@ -21,17 +21,15 @@ const sendPoints = (changeCont, Counter, choice, correct) => {
   changeCont();
 };
 
-const NextButton = ({ changeCont, Counter, choice, correct }) => {
-  return (
-    <button
-      className="Button_next-answer"
-      onClick={() => sendPoints(changeCont, Counter, choice, correct)}
-      data-testid="btn-next"
-    >
-      Próximo
-  </button>
-  );
-};
+const NextButton = ({ changeCont, Counter, choice, correct }) => (
+  < button
+    className="Button_next-answer"
+    onClick={() => sendPoints(changeCont, Counter, choice, correct)}
+    data-testid="btn-next"
+  >
+    Próximo
+  </button >
+);
 
 const mapStateToProps = ({ Counter }) => ({
   Counter,

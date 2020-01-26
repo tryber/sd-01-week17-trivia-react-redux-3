@@ -10,12 +10,12 @@ const Counter = (state = INITIAL_STATE, action) => {
     case ADD_TIME:
       return {
         ...state,
-        time: action.time
+        time: action.time,
       };
     case ADD_VALUE_DIFFICULTY:
       return {
         ...state,
-        difficulty: action.difficulty
+        difficulty: action.difficulty,
       };
     default:
       return state;
