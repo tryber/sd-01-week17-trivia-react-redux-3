@@ -9,7 +9,8 @@ class Game extends React.Component {
     this.state = {
       clicked: false,
       choice: '',
-    }
+    };
+
     this.changeClicked = this.changeClicked.bind(this);
     this.returnClicked = this.returnClicked.bind(this);
   }
@@ -22,7 +23,7 @@ class Game extends React.Component {
   }
 
   returnClicked() {
-    const { changeCont } = this.props
+    const { changeCont } = this.props;
     this.setState(({ clicked }) => ({
       clicked: !clicked,
     }));

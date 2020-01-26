@@ -4,7 +4,7 @@ import './Answers.css';
 
 const verifyCorrect = (value, correctValue) => (
   (value === correctValue ? 'green' : 'red')
-)
+);
 
 const ButtonAnswers = ({ value, correctAnswer, clicked, changeClicked }) => (
   <button

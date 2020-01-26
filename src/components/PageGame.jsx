@@ -6,14 +6,14 @@ import Game from './Game';
 import Loading from './Loading';
 import { fetchQuestion } from '../actions';
 import './PageGame.css';
-import store from '../store';
 
 class PageGame extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       contQuestion: 0,
-    }
+    };
+
     this.changeContQuestion = this.changeContQuestion.bind(this);
     this.renderBody = this.renderBody.bind(this);
     this.setQuestions = this.setQuestions.bind(this);
@@ -58,14 +58,14 @@ class PageGame extends React.Component {
   renderBody() {
     const { isFetching } = this.props;
     const { questions, contQuestion } = this.state;
-    if (isFetching || questions === undefined) return <Loading />
+    if (isFetching || questions === undefined) return <Loading />;
     return (
       <Game
         question={questions[contQuestion]}
         allAnswers={this.allAnswers()}
         changeCont={() => this.changeContQuestion()}
       />
-    )
+    );
   }
 
   render() {
