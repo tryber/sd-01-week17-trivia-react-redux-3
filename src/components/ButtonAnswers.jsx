@@ -15,6 +15,7 @@ const ButtonAnswers = ({ value, correctAnswer, clicked, changeClicked, data }) =
     data-testid={verifyData(data)}
     className={`Answer-button ${verifyCorrect(value, correctAnswer)}${(clicked) ? 'border' : ''}`}
     disabled={clicked}
+    value={value}
     onClick={(e) => changeClicked(e.target.value)}
   >
     {value}

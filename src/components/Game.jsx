@@ -34,7 +34,7 @@ class Game extends React.Component {
 
   renderGame() {
     const { question, allAnswers } = this.props;
-    const { clicked } = this.state;
+    const { clicked, choice } = this.state;
     return (
       <div className="Game_playing">
         <Question category={question.category} text={question.question} />
@@ -45,9 +45,13 @@ class Game extends React.Component {
             allAnswers={allAnswers}
             correct={question.correct_answer}
             click={clicked}
-            changeClicked={() => this.changeClicked()}
+            changeClicked={(value) => this.changeClicked(value)}
           />
-          {clicked && <NextButton changeCont={() => this.returnClicked()} />}
+          {clicked && <NextButton
+            choice={choice}
+            correct={question.correct_answer}
+            changeCont={() => this.returnClicked()}
+          />}
         </div>
       </div>
     );
