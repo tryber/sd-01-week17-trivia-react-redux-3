@@ -1,19 +1,20 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import ButtonAnswer from './ButtonAnswers';
 import './Answers.css';
 
-const Answers = ({
-  correct = 'Será',
-  incorrects = ['Ele é', 'Voará', 'As pessoas boas devem amar seus inimigos'],
-}) => {
-  const allAnswers = [...incorrects];
-  const randomIndex = Math.floor(Math.random() * 3.49);
-  allAnswers.splice(randomIndex, 0, correct);
+const Answers = (props) => {
+  const { allAnswers, correct, click, changeClicked } = props;
   return (
     <div className="Answers_all">
       {allAnswers.map((answer) => (
-        <ButtonAnswer key={answer} value={answer} correctAnswer={correct} />
+        <ButtonAnswer
+          key={answer}
+          value={answer}
+          changeClicked={changeClicked}
+          correctAnswer={correct}
+          clicked={click}
+        />
       ))}
     </div>
   );
@@ -22,6 +23,8 @@ const Answers = ({
 export default Answers;
 
 Answers.propTypes = {
+  allAnswers: PropTypes.arrayOf(PropTypes.string).isRequired,
   correct: PropTypes.string.isRequired,
-  incorrects: PropTypes.arrayOf.isRequired,
+  changeClicked: PropTypes.func.isRequired,
+  click: PropTypes.bool.isRequired,
 };

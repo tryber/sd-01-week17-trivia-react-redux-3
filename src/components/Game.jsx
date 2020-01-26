@@ -1,47 +1,66 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Header from './Header';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
-import { fetchQuestion } from '../actions';
-import './Game.css';
 
 class Game extends React.Component {
-  componentWillMount() {
-    const { url, getQuestions } = this.props;
-    getQuestions(url);
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false,
+      choice: '',
+    };
+
+    this.changeClicked = this.changeClicked.bind(this);
+    this.returnClicked = this.returnClicked.bind(this);
   }
 
-  render() {
+  changeClicked(value) {
+    this.setState(({ clicked }) => ({
+      clicked: !clicked,
+      choice: value,
+    }));
+  }
+
+  returnClicked() {
+    const { changeCont } = this.props;
+    this.setState(({ clicked }) => ({
+      clicked: !clicked,
+    }));
+    changeCont();
+  }
+
+  renderGame() {
+    const { question, allAnswers } = this.props;
+    const { clicked } = this.state;
     return (
-      <div className="Game_screen">
-        <Header />
-        <div className="Game_playing">
-          <Question />
-          <div className="Game_answers-and-next">
-            <Answers />
-            <NextButton />
-          </div>
+      <div className="Game_playing">
+        <Question category={question.category} text={question.question} />
+        <div className="Game_answers-and-next">
+          <Answers
+            allAnswers={allAnswers}
+            correct={question.correct_answer}
+            click={clicked}
+            changeClicked={() => this.changeClicked()}
+          />
+          {clicked && <NextButton changeCont={() => this.returnClicked()} />}
         </div>
       </div>
     );
   }
+
+  render() {
+    return (this.renderGame());
+  }
 }
 
-const mapStateToProps = ({ Url: { state } }) => ({
-  url: state,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  getQuestions: (url) => dispatch(fetchQuestion(url)),
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Game);
+export default Game;
 
 Game.propTypes = {
-  url: PropTypes.string.isRequired,
-  getQuestions: PropTypes.func.isRequired,
+  question: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  allAnswers: PropTypes.arrayOf(PropTypes.string).isRequired,
+  changeCont: PropTypes.func.isRequired,
 };
