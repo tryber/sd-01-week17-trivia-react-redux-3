@@ -71,3 +71,17 @@ export const addURL = (URL) => ({
   type: ADD_URL,
   URL,
 });
+
+export const PLAYER_EMAIL = 'PLAYER_EMAIL';
+
+export const playerEmail = (EMAIL) => ({
+  type: PLAYER_EMAIL,
+  EMAIL,
+});
+
+export const PLAYER_NAME = 'PLAYER_NAME';
+
+export const playerName = (NAME) => ({
+  type: PLAYER_NAME,
+  NAME,
+});
