@@ -14,13 +14,14 @@ class Counter extends React.Component {
   componentDidMount() {
     const { timer } = this.state;
     const { clicked } = this.props;
-    return (timer > 0 && !clicked) && setTimeout(() => this.changeCounter(), 1000);
+    if (timer > 0 && !clicked) (setTimeout(() => this.changeCounter(), 1000));
   }
 
   componentDidUpdate() {
     const { timer } = this.state;
     const { clicked } = this.props;
-    return (timer > 0 && !clicked) && setTimeout(() => this.changeCounter(), 1000);
+    if (timer > 0 && !clicked) (setTimeout(() => this.changeCounter(), 1000));
+    if (timer === 0) (this.verifyReset());
   }
 
   changeCounter() {
@@ -33,6 +34,14 @@ class Counter extends React.Component {
     const { addDif, addTimer } = this.props;
     addDif(valueDifficulty);
     addTimer(valueTimer);
+  }
+
+  verifyReset() {
+    const { changeClicked } = this.props;
+    this.setState({
+      timer: 30,
+    });
+    changeClicked();
   }
 
   render() {
@@ -59,4 +68,5 @@ Counter.propTypes = {
   difficulty: PropTypes.string.isRequired,
   addTimer: PropTypes.func.isRequired,
   addDif: PropTypes.func.isRequired,
+  changeClicked: PropTypes.func.isRequired,
 };

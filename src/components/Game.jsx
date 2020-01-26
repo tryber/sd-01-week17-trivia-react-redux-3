@@ -32,13 +32,24 @@ class Game extends React.Component {
     changeCont();
   }
 
+  renderCounter = () => {
+    const { question } = this.props;
+    const { clicked } = this.state;
+    return (
+      <Counter
+        clicked={clicked}
+        difficulty={question.difficulty}
+        changeClicked={(value) => this.changeClicked(value)}
+      />
+    )
+  }
   renderGame() {
     const { question, allAnswers } = this.props;
     const { clicked, choice } = this.state;
     return (
       <div className="Game_playing">
         <Question category={question.category} text={question.question} />
-        <Counter clicked={clicked} difficulty={question.difficulty} />
+        {this.renderCounter()}
         <div className="Game_answers-and-next">
           <Answers
             incorrects={question.incorrect_answers}
