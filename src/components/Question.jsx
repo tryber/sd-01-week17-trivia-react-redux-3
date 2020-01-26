@@ -8,10 +8,10 @@ const Question = ({
 }) => (
   <div className="Question_camp">
     <div className="Question_category">
-      <p data-testid="question-category">{`Categoria: ${category.replace(/(&quot\;)/g,"\"")}`}</p>
+      <p data-testid="question-category">{`Categoria: ${category}`}</p>
     </div>
     <div className="Question_text">
-      <p data-testid="question-text">{text.replace(/(&quot\;)/g,"\"")}</p>
+      <p data-testid="question-text">{text}</p>
     </div>
   </div>
 );
