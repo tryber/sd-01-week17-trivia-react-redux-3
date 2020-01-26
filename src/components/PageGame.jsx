@@ -22,13 +22,11 @@ class PageGame extends React.Component {
   }
 
   componentWillMount() {
-    console.log('FOI COmpoWILLMOUNT')
     const { url, getQuestions } = this.props;
     getQuestions(url);
   }
 
   componentDidUpdate(prevProps) {
-    console.log('FOI UPDATE')
     if (this.props.data !== prevProps.data) {
       this.setQuestions();
     }
@@ -73,7 +71,6 @@ class PageGame extends React.Component {
   }
 
   render() {
-    console.log(this.props.history.action)
     const { history: { action } } = this.props;
     const { contQuestion, response } = this.state;
     if (action === 'POP') return <Redirect to="/" />
