@@ -1,22 +1,40 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './Answers.css';
 
 class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer = 30,
+      timer: 30,
     }
   }
 
+  componentDidMount() {
+    const { timer } = this.state;
+    const { clicked } = this.props;
+    if (timer > 0 && !clicked)
+      setTimeout(() => this.changeCounter(), 1000)
+  }
+
+  componentDidUpdate() {
+    const { timer } = this.state;
+    const { clicked } = this.props;
+    if (timer > 0 && !clicked)
+      setTimeout(() => this.changeCounter(), 1000)
+  }
+
+  changeCounter() {
+    this.setState(({ timer }) => ({
+      timer: timer - 1,
+    }))
+  };
+
+
   render() {
-    const { timer } = this.props;
+    const { timer } = this.state;
+    const { clicked } = this.props;
     return (
       <div>
-        <p>
-          {`Time: ${timer}`}
-        </p>
+        {clicked || <p>{`Time: ${timer}`}</p>}
       </div>
     )
   }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
+import Counter from './Counter';
 
 class Game extends React.Component {
   constructor(props) {
@@ -34,9 +35,11 @@ class Game extends React.Component {
   renderGame() {
     const { question, allAnswers } = this.props;
     const { clicked } = this.state;
+    console.log(question)
     return (
       <div className="Game_playing">
         <Question category={question.category} text={question.question} />
+        <Counter clicked={clicked} difficulty={question.difficulty}/>
         <div className="Game_answers-and-next">
           <Answers
             allAnswers={allAnswers}
