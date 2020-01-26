@@ -11,13 +11,13 @@ class Counter extends React.Component {
   componentDidMount() {
     const { timer } = this.state;
     const { clicked } = this.props;
-    if (timer > 0 && !clicked) return setTimeout(() => this.changeCounter(), 1000);
+    return (timer > 0 && !clicked) || setTimeout(() => this.changeCounter(), 1000);
   }
 
   componentDidUpdate() {
     const { timer } = this.state;
     const { clicked } = this.props;
-    if (timer > 0 && !clicked) return setTimeout(() => this.changeCounter(), 1000);
+    return (timer > 0 && !clicked) || setTimeout(() => this.changeCounter(), 1000);
   }
 
   changeCounter() {
