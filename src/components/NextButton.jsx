@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Answers.css';
 
 const NextButton = ({ changeCont }) => (
@@ -11,3 +12,7 @@ const NextButton = ({ changeCont }) => (
 );
 
 export default NextButton;
+
+NextButton.propTypes = {
+  changeCont: PropTypes.func.isRequired,
+};

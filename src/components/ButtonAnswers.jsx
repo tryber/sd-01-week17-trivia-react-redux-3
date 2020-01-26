@@ -21,4 +21,6 @@ export default ButtonAnswers;
 ButtonAnswers.propTypes = {
   value: PropTypes.string.isRequired,
   correctAnswer: PropTypes.string.isRequired,
+  clicked: PropTypes.bool.isRequired,
+  changeClicked: PropTypes.func.isRequired,
 };

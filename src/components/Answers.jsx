@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ButtonAnswer from './ButtonAnswers';
 import './Answers.css';
 
@@ -19,3 +20,10 @@ const Answers = (props) => {
 };
 
 export default Answers;
+
+Answers.propTypes = {
+  allAnswers: PropTypes.arrayOf(PropTypes.string).isRequired,
+  correct: PropTypes.string.isRequired,
+  changeClicked: PropTypes.func.isRequired,
+  click: PropTypes.bool.isRequired,
+};

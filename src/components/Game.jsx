@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
@@ -56,3 +57,10 @@ class Game extends React.Component {
 
 export default Game;
 
+Game.propTypes = {
+  question: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  allAnswers: PropTypes.arrayOf(PropTypes.string).isRequired,
+  changeCont: PropTypes.func.isRequired,
+};
