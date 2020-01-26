@@ -103,5 +103,9 @@ LoginPage.propTypes = {
     type: PropTypes.string,
     difficulty: PropTypes.string,
   }).isRequired,
-  token: PropTypes.string.isRequired,
+  token: PropTypes.string,
 };
+
+LoginPage.defaultProps = {
+  token: '',
+}

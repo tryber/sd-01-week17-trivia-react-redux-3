@@ -34,7 +34,7 @@ class PageGame extends React.Component {
 
   setQuestions() {
     const { data } = this.props;
-    if (data === undefined) return;
+    if (data === {}) return;
     this.setState({
       questions: data.results,
       response: data.response_code,
@@ -99,14 +99,19 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(PageGame);
 
 PageGame.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   getQuestions: PropTypes.func.isRequired,
   data: PropTypes.shape({
-    response_code: PropTypes.number.isRequired,
-    results: PropTypes.shape().isRequired,
-  }).isRequired,
+    response_code: PropTypes.number,
+    results: PropTypes.shape(),
+  }),
   isFetching: PropTypes.bool.isRequired,
   history: PropTypes.shape({
     action: PropTypes.string.isRequired,
   }).isRequired,
 };
+
+PageGame.defaultProps = {
+  data: {},
+  url: '',
+}
