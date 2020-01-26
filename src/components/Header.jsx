@@ -33,7 +33,13 @@ const Header = ({
 export default Header;
 
 Header.propTypes = {
-  srcLink: PropTypes.string.isRequired,
-  player: PropTypes.string.isRequired,
-  score: PropTypes.number.isRequired,
+  srcLink: PropTypes.string,
+  player: PropTypes.string,
+  score: PropTypes.number,
+};
+
+Header.defaultProps = {
+  srcLink: undefined,
+  player: undefined,
+  score: undefined,
 };

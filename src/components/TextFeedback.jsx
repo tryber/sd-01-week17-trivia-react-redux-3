@@ -32,6 +32,11 @@ const TextFeedback = ({ contCorrect = 2, points = 40 }) => (
 export default TextFeedback;
 
 TextFeedback.propTypes = {
-  contCorrect: PropTypes.number.isRequired,
-  points: PropTypes.number.isRequired,
+  contCorrect: PropTypes.number,
+  points: PropTypes.number,
+};
+
+TextFeedback.defaultProps = {
+  contCorrect: undefined,
+  points: undefined,
 };

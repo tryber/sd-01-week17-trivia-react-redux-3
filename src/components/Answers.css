@@ -4,7 +4,7 @@
   margin: 40px;
 }
 
-.Answer_button {
+.Answer-button {
   background-color: grey;
   border-radius: 13px;
   color: white;
@@ -18,7 +18,15 @@
   word-break: normal;
 }
 
-.Answer_button:hover {
+.greenborder {
+  border: 2px solid green;
+}
+
+.redborder {
+  border: 2px solid red;
+}
+
+.Answer-button:hover {
   background: gray;
   background-image: linear-gradient(to bottom, #959595, #b3b3b3);
   border-radius: 13px;
