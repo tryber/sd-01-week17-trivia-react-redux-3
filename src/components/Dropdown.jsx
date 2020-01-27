@@ -101,9 +101,9 @@ class Dropdown extends React.Component {
   renderLabel() {
     const { types } = this.props;
     const label = {
-      type: <label htmlFor="a" className="labels">Tipo:</label>,
+      type: <label htmlFor="c" className="labels">Tipo:</label>,
       difficulty: <label htmlFor="b" className="labels">Dificuldade:</label>,
-      category: <label htmlFor="c" className="labels">Categoria:</label>,
+      category: <label htmlFor="a" className="labels">Categoria:</label>,
     };
     return label[types];
   }

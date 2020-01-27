@@ -22,7 +22,3 @@ export const UpdateRanking = (value) => {
 export const setLocalTokenRanking = (token) => {
   localStorage.setItem('token', token);
 };
-
-export const getLocalTokenRanking = () => {
-  localStorage.getItem('token');
-};
