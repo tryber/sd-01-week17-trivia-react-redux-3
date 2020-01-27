@@ -75,7 +75,7 @@ class PageGame extends React.Component {
     const { contQuestion, response } = this.state;
     if (action === 'POP') return <Redirect to="/" />;
     if (response === 3) return <Redirect to="/" />;
-    if (contQuestion === 5) return <Redirect to="/Game/Feedback" />;
+    if (contQuestion === 5) return <Redirect to="/feedback" />;
     return (
       <div className="Game_screen">
         <Header />
