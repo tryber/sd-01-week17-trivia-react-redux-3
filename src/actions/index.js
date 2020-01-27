@@ -71,3 +71,53 @@ export const addURL = (URL) => ({
   type: ADD_URL,
   URL,
 });
+
+export const ADD_NAME = 'ADD_NAME';
+export const ADD_EMAIL = 'ADD_EMAIL';
+export const ADD_LINK_IMAGE = 'ADD_LINK_IMAGE';
+
+export const addName = (name) => ({
+  type: ADD_NAME,
+  name,
+});
+
+export const addEmail = (email) => ({
+  type: ADD_EMAIL,
+  email,
+});
+
+export const addLinkImage = (linkImage) => ({
+  type: ADD_LINK_IMAGE,
+  linkImage,
+});
+
+export const ADD_VALUE_DIFFICULTY = 'ADD_VALUE_DIFFICULTY';
+export const ADD_TIME = 'ADD_TIME';
+
+export const addDifficulty = (difficulty) => ({
+  type: ADD_VALUE_DIFFICULTY,
+  difficulty,
+});
+
+export const addTime = (time) => ({
+  type: ADD_TIME,
+  time,
+});
+
+export const ADD_POINTS = 'ADD_POINTS';
+export const ADD_ASSERTION = 'ADD_ASSERTION';
+
+export const addPoints = (points) => ({
+  type: ADD_POINTS,
+  points,
+});
+
+export const addAssertion = () => ({
+  type: ADD_ASSERTION,
+});
+
+export const RESET = 'RESET';
+
+export const reset = () => ({
+  type: RESET,
+});

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
+import Counter from './Counter';
 
 class Game extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Game extends React.Component {
 
     this.changeClicked = this.changeClicked.bind(this);
     this.returnClicked = this.returnClicked.bind(this);
+    this.renderCounter = this.renderCounter.bind(this);
   }
 
   changeClicked(value) {
@@ -31,20 +33,38 @@ class Game extends React.Component {
     changeCont();
   }
 
+  renderCounter() {
+    const { question } = this.props;
+    const { clicked } = this.state;
+    return (
+      <Counter
+        clicked={clicked}
+        difficulty={question.difficulty}
+        changeClicked={(value) => this.changeClicked(value)}
+      />
+    );
+  }
+
   renderGame() {
     const { question, allAnswers } = this.props;
-    const { clicked } = this.state;
+    const { clicked, choice } = this.state;
     return (
       <div className="Game_playing">
         <Question category={question.category} text={question.question} />
+        {this.renderCounter()}
         <div className="Game_answers-and-next">
           <Answers
+            incorrects={question.incorrect_answers}
             allAnswers={allAnswers}
             correct={question.correct_answer}
             click={clicked}
-            changeClicked={() => this.changeClicked()}
+            changeClicked={(value) => this.changeClicked(value)}
           />
-          {clicked && <NextButton changeCont={() => this.returnClicked()} />}
+          {clicked && <NextButton
+            choice={choice}
+            correct={question.correct_answer}
+            changeCont={() => this.returnClicked()}
+          />}
         </div>
       </div>
     );

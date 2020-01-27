@@ -2,6 +2,7 @@ import {
   REQUEST_TOKEN,
   RECEIVE_TOKEN_SUCCESS,
   RECEIVE_TOKEN_FAILURE,
+  RESET,
 } from '../actions';
 
 const INITIAL_TOKEN = {
@@ -27,6 +28,8 @@ const Token = (state = INITIAL_TOKEN, action) => {
         error: action.error,
         isFetching: false,
       };
+    case RESET:
+      return INITIAL_TOKEN;
     default:
       return state;
   }

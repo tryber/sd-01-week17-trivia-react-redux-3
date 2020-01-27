@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const ShowProps = (value) => (value < 3 ? 'Podia ser melhor...' : 'Mandou bem!');
 
@@ -29,7 +30,12 @@ const TextFeedback = ({ contCorrect = 2, points = 40 }) => (
   </div>
 );
 
-export default TextFeedback;
+const mapStateToProps = ({ Score: { points, assertion } }) => ({
+  points,
+  contCorrect: assertion,
+});
+
+export default connect(mapStateToProps)(TextFeedback);
 
 TextFeedback.propTypes = {
   contCorrect: PropTypes.number,
@@ -37,6 +43,6 @@ TextFeedback.propTypes = {
 };
 
 TextFeedback.defaultProps = {
-  contCorrect: undefined,
-  points: undefined,
+  contCorrect: '',
+  points: '',
 };

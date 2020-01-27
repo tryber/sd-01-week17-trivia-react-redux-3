@@ -9,6 +9,15 @@ export const getTokenTriviaApi = () => (
     ))
 );
 
+export const getCategory = () => (
+  fetch('https://opentdb.com/api_category.php')
+    .then((response) => (
+      response
+        .json()
+        .then((json) => (response.ok ? Promise.resolve(json) : Promise.reject(json)))
+    ))
+);
+
 export const getQuestionTriviaApi = (url) => (
   fetch(url)
     .then((response) => (

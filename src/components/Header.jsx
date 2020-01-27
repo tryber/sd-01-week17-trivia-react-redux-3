@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './Header.css';
 
-const Header = ({
-  srcLink = 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
-  player = 'João',
-  score = 20,
-}) => (
+const Header = ({ srcLink, player, points }) => (
   <div className="Header_background-header">
     <div className="Header_photo-and-name-player">
       <img
@@ -25,21 +22,27 @@ const Header = ({
       className="Header_paragraph"
       data-testid="header-score"
     >
-      {`Pontos: ${score}`}
+      {`Pontos: ${points}`}
     </p>
   </div>
 );
 
-export default Header;
+const mapStateToProps = ({ User: { name, linkImage }, Score: { points } }) => ({
+  player: name,
+  srcLink: linkImage,
+  points,
+});
+
+export default connect(mapStateToProps)(Header);
 
 Header.propTypes = {
   srcLink: PropTypes.string,
   player: PropTypes.string,
-  score: PropTypes.number,
+  points: PropTypes.number,
 };
 
 Header.defaultProps = {
-  srcLink: undefined,
-  player: undefined,
-  score: undefined,
+  srcLink: '',
+  player: '',
+  points: 0,
 };

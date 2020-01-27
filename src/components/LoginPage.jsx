@@ -11,11 +11,12 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      valueEmail: '',
-      valueName: '',
+      email: '',
+      name: '',
     };
     this.verifyCamps = this.verifyCamps.bind(this);
-    this.registrationData = this.registrationData.bind(this);
+    this.changeEmail = this.changeEmail.bind(this);
+    this.changeName = this.changeName.bind(this);
     this.categoryUrl = this.categoryUrl.bind(this);
     this.difficultyUrl = this.difficultyUrl.bind(this);
     this.typeUrl = this.typeUrl.bind(this);
@@ -52,19 +53,24 @@ class LoginPage extends React.Component {
     setUrl(Url);
   }
 
-  registrationData(event, data) {
-    const { value } = event.target;
+  changeEmail(value) {
     this.setState({
-      [data]: value,
+      email: value,
+    });
+  }
+
+  changeName(value) {
+    this.setState({
+      name: value,
     });
   }
 
   verifyCamps() {
-    return (this.state.valueEmail !== '') && (this.state.valueName !== '');
+    return (this.state.email !== '') && (this.state.name !== '');
   }
 
   render() {
-    const { valueEmail, valueName } = this.state;
+    const { email, name } = this.state;
     this.createUrl();
     return (
       <div className="App">
@@ -73,12 +79,12 @@ class LoginPage extends React.Component {
           <p>SUA VEZ</p>
           <LinkPageSettings />
           <InicialForm
-            valueEmail={valueEmail}
-            onChangeValueEmail={(event) => this.registrationData(event, 'valueEmail')}
-            valueName={valueName}
-            onChangeValueName={(event) => this.registrationData(event, 'valueName')}
+            email={email}
+            onChangeValueEmail={(value) => this.changeEmail(value)}
+            name={name}
+            onChangeValueName={(value) => this.changeName(value)}
           />
-          <LinkPageGame disable={this.verifyCamps()} />
+          <LinkPageGame name={name} email={email} disable={this.verifyCamps()} />
         </div>
       </div>
     );
