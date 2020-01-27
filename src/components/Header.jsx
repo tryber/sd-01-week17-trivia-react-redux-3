@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Header.css';
 
-const Header = ({ srcLink, player, points, }) => (
+const Header = ({ srcLink, player, points }) => (
   <div className="Header_background-header">
     <div className="Header_photo-and-name-player">
       <img
