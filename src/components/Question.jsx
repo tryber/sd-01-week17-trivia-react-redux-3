@@ -2,10 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Question.css';
 
-const Question = ({
-  category = 'Mágica',
-  text = 'Um Ninho de mafagafos com sete mafagafinhos. Quem desmafaguifar o ninho dos mafagagos, bom desmafaguifador...?',
-}) => (
+const Question = ({ category, text }) => (
   <div className="Question_camp">
     <div className="Question_category">
       <p data-testid="question-category">{`Categoria: ${category}`}</p>

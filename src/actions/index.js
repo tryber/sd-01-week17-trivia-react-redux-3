@@ -71,3 +71,16 @@ export const addURL = (URL) => ({
   type: ADD_URL,
   URL,
 });
+
+export const ADD_VALUE_DIFFICULTY = 'ADD_VALUE_DIFFICULTY';
+export const ADD_TIME = 'ADD_TIME';
+
+export const addDifficulty = (difficulty) => ({
+  type: ADD_VALUE_DIFFICULTY,
+  difficulty,
+});
+
+export const addTime = (time) => ({
+  type: ADD_TIME,
+  time,
+});
