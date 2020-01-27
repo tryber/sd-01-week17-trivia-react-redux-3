@@ -2,12 +2,33 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchToken } from '../actions';
+import { fetchToken, addName, addEmail, addLinkImage } from '../actions';
+import imageLink from '../services/gravatarAPI'
 import './LinkPageGame.css';
 
 class LinkPageGame extends React.Component {
+  constructor(props) {
+    super(props);
+    this.sendData = this.sendData.bind(this);
+  }
+
+  sendData() {
+    const {
+      getToken,
+      saveName,
+      saveEmail,
+      saveImage,
+      name,
+      email,
+    } = this.props;
+    saveName(name);
+    saveEmail(email);
+    saveImage(imageLink(email))
+    getToken();
+  }
+
   render() {
-    const { disable, getToken, isFetching, token } = this.props;
+    const { disable, isFetching, token } = this.props;
     if (token) return <Redirect to="/game" />;
     return (
       <div>
@@ -15,7 +36,7 @@ class LinkPageGame extends React.Component {
           type="button"
           value={(isFetching ? 'Carregando' : 'Jogar')}
           className="link-game"
-          onClick={() => getToken()}
+          onClick={() => this.sendData()}
           data-testid="btn-play"
           disabled={!disable}
         />
@@ -26,6 +47,9 @@ class LinkPageGame extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   getToken: () => dispatch(fetchToken()),
+  saveName: (name) => dispatch(addName(name)),
+  saveEmail: (email) => dispatch(addEmail(email)),
+  saveImage: (image) => dispatch(addLinkImage(image)),
 });
 
 const mapStateToProps = ({ Token: { token, isFetching } }) => ({

@@ -1,8 +1,13 @@
-import { ADD_NAME, ADD_EMAIL, ADD_LINK_IMAGE } from '../actions';
+import {
+  ADD_NAME,
+  ADD_EMAIL,
+  ADD_LINK_IMAGE,
+} from '../actions';
 
-const INITIAL_VALUE = {};
 
-const User = (state = INITIAL_VALUE, action) => {
+const INITIAL_STATE = {};
+
+const User = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_NAME:
       return {
