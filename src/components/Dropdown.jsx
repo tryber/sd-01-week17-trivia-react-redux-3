@@ -1,81 +1,127 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getCategory } from '../services/TriviaApi';
+import Loading from './Loading';
 import './Dropdown.css';
 
-const testid1 = 'question-category-dropdown';
-const testid2 = 'question-difficulty-dropdown';
-const testid3 = 'question-type-dropdown';
+class Dropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fetchDone: false,
+      category: [],
+    };
 
-const renderInputCategory = (change) => (
-  <select id="a" className="slc" data-testid={testid1} onChange={(e) => change(e.target.value)}>
-    <option value="">Any Category</option>
-    <option value="9">General Knowledge</option>
-    <option value="10">Entertainment: Books</option>
-    <option value="11">Entertainment: Film</option>
-    <option value="12">Entertainment: Music</option>
-    <option value="13">Entertainment: Musical Theatres</option>
-    <option value="14">Entertainment: Television</option>
-    <option value="17">Science &amp; Nature</option>
-    <option value="18">Science: Computers</option>
-    <option value="19">Science: Mathematics</option>
-    <option value="20">Mythology</option>
-    <option value="21">Sports</option>
-    <option value="22">Geography</option>
-    <option value="23">History</option>
-    <option value="24">Politics</option>
-    <option value="25">Art</option>
-    <option value="26">Celebrities</option>
-    <option value="27">Animals</option>
-    <option value="28">Vehicles</option>
-  </select>
-);
+    this.renderInput = this.renderInput.bind(this)
+    this.renderInputCategory = this.renderInputCategory.bind(this)
+    this.renderInputDifficulty = this.renderInputDifficulty.bind(this)
+    this.renderInputType = this.renderInputType.bind(this)
+    this.renderLabel = this.renderLabel.bind(this)
+  }
 
-const renderInputDifficulty = (change) => (
-  <select id="b" className="slc" data-testid={testid2} onChange={(e) => change(e.target.value)} >
-    <option value="">Any Difficulty</option>
-    <option value="easy">Easy</option>
-    <option value="medium">Medium</option>
-    <option value="hard">Hard</option>
-  </select>
-);
+  componentDidMount() {
+    if (this.props.types === 'category') {
+      return getCategory().then(data => this.changeFetch(data.trivia_categories));
+    } else {
+      this.changeFetch([]);
+    };
+  }
 
-const renderInputType = (change) => (
-  <select id="c" className="slc" data-testid={testid3} onChange={(e) => change(e.target.value)}>
-    <option value="">Any Type</option>
-    <option value="multiple">Multiple Choice</option>
-    <option value="boolean">True / False</option>
-  </select>
-);
+  changeFetch(value) {
+    this.setState({
+      fetchDone: true,
+      category: value,
+    });
+  }
+
+  createOption(id, name) {
+    return <option key={id} value={id}>{name}</option>;
+  }
+
+  renderInputCategory() {
+    const { onChange } = this.props;
+    const { category } = this.state;
+    return (
+      <select
+        id="a"
+        className="slc"
+        data-testid={'question-category-dropdown'}
+        onChange={(e) => onChange(e.target.value)}
+      >
+        <option value="">Any Category</option>
+        {category.map(({ id, name }) => this.createOption(id, name))};
+      </select>
+    );
+  }
+
+  renderInputDifficulty() {
+    const { onChange } = this.props;
+    return (
+      <select
+        id="b"
+        className="slc"
+        data-testid="question-difficulty-dropdown"
+        onChange={(e) => onChange(e.target.value)}
+      >
+        <option value="">Any Difficulty</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+    );
+  }
+
+  renderInputType() {
+    const { onChange } = this.props;
+    return (
+      <select
+        id="c"
+        className="slc"
+        data-testid={'question-type-dropdown'}
+        onChange={(e) => onChange(e.target.value)}
+      >
+        <option value="">Any Type</option>
+        <option value="multiple">Multiple Choice</option>
+        <option value="boolean">True / False</option>
+      </select>
+    );
+  }
 
 
-const renderInput = (value, func) => {
-  const inputs = {
-    type: renderInputType(func),
-    difficulty: renderInputDifficulty(func),
-    category: renderInputCategory(func),
-  };
-  return inputs[value];
+  renderInput() {
+    const { types } = this.props;
+    const inputs = {
+      type: this.renderInputType(),
+      difficulty: this.renderInputDifficulty(),
+      category: this.renderInputCategory(),
+    };
+    return inputs[types];
+  }
+
+  renderLabel() {
+    const { types } = this.props
+    const label = {
+      type: <label htmlFor="a" className="labels">Tipo:</label>,
+      difficulty: <label htmlFor="b" className="labels">Dificuldade:</label>,
+      category: <label htmlFor="c" className="labels">Categoria:</label>,
+    };
+    return label[types];
+  }
+
+  render() {
+    if (!this.state.fetchDone) return <Loading />;
+    return (
+      < div className="Dropdown" >
+        {this.renderLabel()}
+        {this.renderInput()}
+      </div >
+    );
+  }
 };
-
-const renderLabel = (value) => {
-  const label = {
-    type: <label htmlFor="a" className="labels">Tipo:</label>,
-    difficulty: <label htmlFor="b" className="labels">Dificuldade:</label>,
-    category: <label htmlFor="c" className="labels">Categoria:</label>,
-  };
-  return label[value];
-};
-
-const Dropdown = ({ type, onChange }) => (
-  <div className="Dropdown">
-    {renderLabel(type)}
-    {renderInput(type, onChange)}
-  </div>
-);
 
 export default Dropdown;
 
 Dropdown.propTypes = {
-  type: PropTypes.string.isRequired,
+  types: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
