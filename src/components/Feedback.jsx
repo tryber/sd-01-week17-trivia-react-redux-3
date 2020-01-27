@@ -73,4 +73,10 @@ export default connect(mapStateToProps, mapDispatchToProps)(Feedback);
 
 Feedback.propTypes = {
   resetAll: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  linkImage: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  assertion: PropTypes.number.isRequired,
+  points: PropTypes.number.isRequired,
+  token: PropTypes.string.isRequired,
 };
