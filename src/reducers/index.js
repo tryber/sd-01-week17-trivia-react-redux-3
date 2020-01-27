@@ -14,6 +14,7 @@ const rootReducer = combineReducers({
   Url,
   User,
   Counter,
+  Score,
 });
 
 export default rootReducer;

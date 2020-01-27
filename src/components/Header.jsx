@@ -6,7 +6,7 @@ import './Header.css';
 const Header = ({
   srcLink,
   player,
-  score,
+  points,
 }) => (
     <div className="Header_background-header">
       <div className="Header_photo-and-name-player">
@@ -26,15 +26,15 @@ const Header = ({
         className="Header_paragraph"
         data-testid="header-score"
       >
-        {`Pontos: ${score}`}
+        {`Pontos: ${points}`}
       </p>
     </div>
   );
 
-const mapStateToProps = ({ User: { name, linkImage, score } }) => ({
+const mapStateToProps = ({ User: { name, linkImage }, Score: { points } }) => ({
   player: name,
   srcLink: linkImage,
-  score,
+  points,
 });
 
 export default connect(mapStateToProps)(Header);
@@ -42,11 +42,11 @@ export default connect(mapStateToProps)(Header);
 Header.propTypes = {
   srcLink: PropTypes.string,
   player: PropTypes.string,
-  score: PropTypes.number,
+  points: PropTypes.number,
 };
 
 Header.defaultProps = {
   srcLink: '',
   player: '',
-  score: 0,
+  points: 0,
 };

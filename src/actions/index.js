@@ -103,3 +103,15 @@ export const addTime = (time) => ({
   type: ADD_TIME,
   time,
 });
+
+export const ADD_POINTS = 'ADD_POINTS';
+export const ADD_ASSERTION = 'ADD_ASSERTION';
+
+export const addPoints = (points) => ({
+  type: ADD_POINTS,
+  points,
+});
+
+export const addAssertion = () => ({
+  type: ADD_ASSERTION,
+});
