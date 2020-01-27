@@ -32,6 +32,11 @@ export default inicialForm;
 inicialForm.propTypes = {
   onChangeValueEmail: PropTypes.func.isRequired,
   onChangeValueName: PropTypes.func.isRequired,
-  valueEmail: PropTypes.string.isRequired,
-  valueName: PropTypes.string.isRequired,
+  valueEmail: PropTypes.string,
+  valueName: PropTypes.string,
+};
+
+inicialForm.defaultProps = {
+  valueEmail: '',
+  valueName: '',
 };
