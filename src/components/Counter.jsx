@@ -22,7 +22,7 @@ class Counter extends React.Component {
 
     if (paused && !clicked) (this.changePausedFalse());
     if (!paused && !clicked) (setTimeout(() => this.changeCounter(), 1000));
-    if (timer !== 30 && !clicked) this.changePausedTrue();
+    if (timer !== 30 && clicked) this.changePausedTrue();
   }
 
   changePausedTrue() {
