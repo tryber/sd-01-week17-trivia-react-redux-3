@@ -8,40 +8,50 @@ class Counter extends React.Component {
     super(props);
     this.state = {
       timer: 30,
+      paused: true,
     };
   }
 
   componentDidMount() {
-    const { timer } = this.state;
-    const { clicked } = this.props;
-    if (timer > 0 && !clicked) (setTimeout(() => this.changeCounter(), 1000));
+    this.changePausedFalse();
   }
 
   componentDidUpdate() {
-    const { timer } = this.state;
+    const { timer, paused } = this.state;
     const { clicked } = this.props;
-    if (timer > 0 && !clicked) (setTimeout(() => this.changeCounter(), 1000));
-    if (timer === 0) (this.verifyReset());
+    if (!clicked) {
+      if (paused) (this.changePausedFalse());
+      if (!paused) (setTimeout(() => this.changeCounter(), 1000));
+    } else {
+      if (timer !== 30) (this.changePausedTrue());
+    }
+  }
+
+  changePausedTrue() {
+    this.setState({ paused: true, timer: 30 });
+  }
+
+  changePausedFalse() {
+    this.setState({ paused: false });
   }
 
   changeCounter() {
-    this.setState(({ timer }) => ({
-      timer: timer - 1,
-    }));
+    const { timer, paused } = this.state;
+    const { changeClicked } = this.props
+    if (timer !== 0 && !paused) {
+      this.setState(({ timer }) => ({
+        timer: timer - 1,
+      }));
+    } else {
+      this.changePausedTrue();
+    }
+    if (timer === 0) (changeClicked(''));
   }
 
   sendValues(valueDifficulty, valueTimer) {
     const { addDif, addTimer } = this.props;
     addDif(valueDifficulty);
     addTimer(valueTimer);
-  }
-
-  verifyReset() {
-    const { changeClicked } = this.props;
-    this.setState({
-      timer: 30,
-    });
-    changeClicked();
   }
 
   render() {
