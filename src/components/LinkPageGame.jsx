@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchToken, addName, addEmail, addLinkImage } from '../actions';
-import imageLink from '../services/gravatarAPI'
+import imageLink from '../services/gravatarAPI';
 import './LinkPageGame.css';
 
 class LinkPageGame extends React.Component {
@@ -23,7 +23,7 @@ class LinkPageGame extends React.Component {
     } = this.props;
     saveName(name);
     saveEmail(email);
-    saveImage(imageLink(email))
+    saveImage(imageLink(email));
     getToken();
   }
 
@@ -62,11 +62,18 @@ export default connect(mapStateToProps, mapDispatchToProps)(LinkPageGame);
 LinkPageGame.propTypes = {
   disable: PropTypes.bool.isRequired,
   getToken: PropTypes.func.isRequired,
+  saveName: PropTypes.func.isRequired,
+  saveEmail: PropTypes.func.isRequired,
+  saveImage: PropTypes.func.isRequired,
   token: PropTypes.string,
   isFetching: PropTypes.bool,
+  name: PropTypes.string,
+  email: PropTypes.string,
 };
 
 LinkPageGame.defaultProps = {
   token: '',
   isFetching: false,
+  name: '',
+  email: '',
 };
