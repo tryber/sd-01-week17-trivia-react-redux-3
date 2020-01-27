@@ -37,6 +37,6 @@ inicialForm.propTypes = {
 };
 
 inicialForm.defaultProps = {
-  valueEmail: '',
-  valueName: '',
+  valueEmail: undefined,
+  valueName: undefined,
 };

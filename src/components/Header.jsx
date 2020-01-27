@@ -48,5 +48,5 @@ Header.propTypes = {
 Header.defaultProps = {
   srcLink: '',
   player: '',
-  score: '',
+  score: 0,
 };
