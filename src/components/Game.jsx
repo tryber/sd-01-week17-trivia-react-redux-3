@@ -72,7 +72,7 @@ class Game extends React.Component {
   }
 
   render() {
-    console.log(store.getState());
+    console.log(store.getState().Score);
     return (this.renderGame());
   }
 }

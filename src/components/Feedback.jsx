@@ -10,7 +10,7 @@ const Feedback = () => (
     <div className="sub-div">
       <TextFeedback />
       <Link to="/game/ranking" >VER RANKING</Link>
-      <Link to="/game" className="green">JOGAR NOVAMENTE</Link>
+      <Link to="/" className="green">JOGAR NOVAMENTE</Link>
     </div>
   </div>
 );
