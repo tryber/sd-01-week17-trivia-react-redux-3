@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from './Header';
 import TextFeedback from './TextFeedback';
@@ -22,3 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(null, mapDispatchToProps)(Feedback);
+
+Feedback.propTypes = {
+  resetAll: PropTypes.func.isRequired,
+};
