@@ -12,19 +12,18 @@ class Dropdown extends React.Component {
       category: [],
     };
 
-    this.renderInput = this.renderInput.bind(this)
-    this.renderInputCategory = this.renderInputCategory.bind(this)
-    this.renderInputDifficulty = this.renderInputDifficulty.bind(this)
-    this.renderInputType = this.renderInputType.bind(this)
-    this.renderLabel = this.renderLabel.bind(this)
+    this.renderInput = this.renderInput.bind(this);
+    this.renderInputCategory = this.renderInputCategory.bind(this);
+    this.renderInputDifficulty = this.renderInputDifficulty.bind(this);
+    this.renderInputType = this.renderInputType.bind(this);
+    this.renderLabel = this.renderLabel.bind(this);
   }
 
   componentDidMount() {
     if (this.props.types === 'category') {
-      return getCategory().then(data => this.changeFetch(data.trivia_categories));
-    } else {
-      this.changeFetch([]);
-    };
+      return getCategory().then((data) => this.changeFetch(data.trivia_categories));
+    }
+    return this.changeFetch([]);
   }
 
   changeFetch(value) {
@@ -34,8 +33,9 @@ class Dropdown extends React.Component {
     });
   }
 
-  createOption(id, name) {
-    return <option key={id} value={id}>{name}</option>;
+  createOption(id, name, index) {
+    const { category } = this.state;
+    return <option key={category[index].id} value={id}>{name}</option>;
   }
 
   renderInputCategory() {
@@ -49,7 +49,7 @@ class Dropdown extends React.Component {
         onChange={(e) => onChange(e.target.value)}
       >
         <option value="">Any Category</option>
-        {category.map(({ id, name }) => this.createOption(id, name))};
+        {category.map(({ id, name }, index) => this.createOption(id, name, index))};
       </select>
     );
   }
@@ -99,7 +99,7 @@ class Dropdown extends React.Component {
   }
 
   renderLabel() {
-    const { types } = this.props
+    const { types } = this.props;
     const label = {
       type: <label htmlFor="a" className="labels">Tipo:</label>,
       difficulty: <label htmlFor="b" className="labels">Dificuldade:</label>,
@@ -111,13 +111,13 @@ class Dropdown extends React.Component {
   render() {
     if (!this.state.fetchDone) return <Loading />;
     return (
-      < div className="Dropdown" >
+      <div className="Dropdown" >
         {this.renderLabel()}
         {this.renderInput()}
       </div >
     );
   }
-};
+}
 
 export default Dropdown;
 
