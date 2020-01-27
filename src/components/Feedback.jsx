@@ -49,7 +49,7 @@ const Feedback = ({
         <Link onClick={() => resetAll()} to="/" className="green">JOGAR NOVAMENTE</Link>
       </div>
     </div >
-  )
+  );
 };
 
 const mapDispatchToProps = (dispatch) => ({
