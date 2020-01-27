@@ -4,8 +4,8 @@ import {
 } from '../actions';
 
 const INITIAL_STATE = {
-  points:0,
-  assertion:0,
+  points: 0,
+  assertion: 0,
 };
 
 const Score = (state = INITIAL_STATE, action) => {
@@ -18,7 +18,7 @@ const Score = (state = INITIAL_STATE, action) => {
     case ADD_ASSERTION:
       return {
         ...state,
-        assertion: state.assertion+1,
+        assertion: state.assertion + 1,
       };
     default:
       return state;
