@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from './Header';
 import TextFeedback from './TextFeedback';
+import { reset } from '../actions';
 import './Feedback.css';
 
-const Feedback = () => (
+const Feedback = ({ resetAll }) => (
   <div className="Feedback">
     <Header />
     <div className="sub-div">
       <TextFeedback />
       <Link to="/game/ranking" >VER RANKING</Link>
-      <Link to="/" className="green">JOGAR NOVAMENTE</Link>
+      <Link onClick={() => resetAll()} to="/" className="green">JOGAR NOVAMENTE</Link>
     </div>
   </div>
 );
 
-export default Feedback;
+const mapDispatchToProps = (dispatch) => ({
+  resetAll: () => dispatch(reset()),
+});
+
+export default connect(null, mapDispatchToProps)(Feedback);

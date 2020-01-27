@@ -1,6 +1,7 @@
 import {
   ADD_ASSERTION,
   ADD_POINTS,
+  RESET,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -20,6 +21,8 @@ const Score = (state = INITIAL_STATE, action) => {
         ...state,
         assertion: state.assertion + 1,
       };
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }

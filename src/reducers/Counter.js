@@ -1,6 +1,7 @@
 import {
   ADD_TIME,
   ADD_VALUE_DIFFICULTY,
+  RESET,
 } from '../actions';
 
 const INITIAL_STATE = {};
@@ -17,6 +18,8 @@ const Counter = (state = INITIAL_STATE, action) => {
         ...state,
         difficulty: action.difficulty,
       };
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }

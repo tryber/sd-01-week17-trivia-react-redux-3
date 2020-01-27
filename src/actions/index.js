@@ -115,3 +115,9 @@ export const addPoints = (points) => ({
 export const addAssertion = () => ({
   type: ADD_ASSERTION,
 });
+
+export const RESET = 'RESET';
+
+export const reset = () => ({
+  type: RESET,
+});
