@@ -90,3 +90,16 @@ export const addLinkImage = (linkImage) => ({
   type: ADD_LINK_IMAGE,
   linkImage,
 });
+
+export const ADD_VALUE_DIFFICULTY = 'ADD_VALUE_DIFFICULTY';
+export const ADD_TIME = 'ADD_TIME';
+
+export const addDifficulty = (difficulty) => ({
+  type: ADD_VALUE_DIFFICULTY,
+  difficulty,
+});
+
+export const addTime = (time) => ({
+  type: ADD_TIME,
+  time,
+});

@@ -4,6 +4,8 @@ import Token from './Token';
 import Settings from './Settings';
 import Url from './Url';
 import User from './User';
+import Counter from './Counter';
+
 
 const rootReducer = combineReducers({
   Questions,
@@ -11,6 +13,7 @@ const rootReducer = combineReducers({
   Settings,
   Url,
   User,
+  Counter,
 });
 
 export default rootReducer;
