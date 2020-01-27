@@ -12,7 +12,7 @@ const inicialForm = (props) => {
         data-testid="input-gravatar-email"
         value={valueEmail}
         required
-        onChange={onChangeValueEmail}
+        onChange={(e) => onChangeValueEmail(e.target.value)}
       />
       <p>Nome do jogador</p>
       <input
@@ -21,7 +21,7 @@ const inicialForm = (props) => {
         data-testid="input-player-name"
         value={valueName}
         required
-        onChange={onChangeValueName}
+        onChange={(e) => onChangeValueName(e.target.value)}
       />
     </div>
   );

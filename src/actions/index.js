@@ -72,6 +72,25 @@ export const addURL = (URL) => ({
   URL,
 });
 
+export const ADD_NAME = 'ADD_NAME';
+export const ADD_EMAIL = 'ADD_EMAIL';
+export const ADD_LINK_IMAGE = 'ADD_LINK_IMAGE';
+
+export const addName = (name) => ({
+  type: ADD_NAME,
+  name,
+});
+
+export const addEmail = (email) => ({
+  type: ADD_EMAIL,
+  email,
+});
+
+export const addLinkImage = (linkImage) => ({
+  type: ADD_LINK_IMAGE,
+  linkImage,
+});
+
 export const ADD_VALUE_DIFFICULTY = 'ADD_VALUE_DIFFICULTY';
 export const ADD_TIME = 'ADD_TIME';
 
