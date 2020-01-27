@@ -37,11 +37,11 @@ const Feedback = ({
   setLocalTokenRanking(token);
   if (!getRanking()) {
     setRanking();
-  };
+  }
   UpdateRanking(ranking);
   setNewPlayer(player);
   return (
-    < div className="Feedback" >
+    <div className="Feedback" >
       <Header />
       <div className="sub-div">
         <TextFeedback />
@@ -59,7 +59,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = ({
   User: { name, email, linkImage },
   Score: { points, assertion },
-  Token: { token }
+  Token: { token },
 }) => ({
   name,
   linkImage,
