@@ -42,7 +42,7 @@ class Game extends React.Component {
         difficulty={question.difficulty}
         changeClicked={(value) => this.changeClicked(value)}
       />
-    )
+    );
   }
 
   renderGame() {
