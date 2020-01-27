@@ -2,6 +2,7 @@ import {
   ADD_NAME,
   ADD_EMAIL,
   ADD_LINK_IMAGE,
+  RESET,
 } from '../actions';
 
 
@@ -24,6 +25,8 @@ const User = (state = INITIAL_STATE, action) => {
         ...state,
         linkImage: action.linkImage,
       };
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }

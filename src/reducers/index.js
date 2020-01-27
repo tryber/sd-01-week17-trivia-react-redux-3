@@ -5,6 +5,7 @@ import Settings from './Settings';
 import Url from './Url';
 import User from './User';
 import Counter from './Counter';
+import Score from './Score';
 
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   Url,
   User,
   Counter,
+  Score,
 });
 
 export default rootReducer;

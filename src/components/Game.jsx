@@ -4,7 +4,6 @@ import Question from './Question';
 import Answers from './Answers';
 import NextButton from './NextButton';
 import Counter from './Counter';
-import store from '../store';
 
 class Game extends React.Component {
   constructor(props) {
@@ -72,7 +71,6 @@ class Game extends React.Component {
   }
 
   render() {
-    console.log(store.getState());
     return (this.renderGame());
   }
 }

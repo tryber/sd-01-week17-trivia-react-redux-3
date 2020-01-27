@@ -47,9 +47,9 @@ class Settings extends React.Component {
     return (
       <div className="Settings">
         <h1 className="title-Settings">Configurações</h1>
-        <Dropdown type="category" onChange={(value) => this.changeCategory(value)} />
-        <Dropdown type="difficulty" onChange={(value) => this.changeDifficulty(value)} />
-        <Dropdown type="type" onChange={(value) => this.changeType(value)} />
+        <Dropdown types="category" onChange={(value) => this.changeCategory(value)} />
+        <Dropdown types="difficulty" onChange={(value) => this.changeDifficulty(value)} />
+        <Dropdown types="type" onChange={(value) => this.changeType(value)} />
         <Link to="/" className="back" >Back</Link>
       </div>
     );

@@ -2,6 +2,7 @@ import {
   REQUEST_QUESTION,
   RECEIVE_QUESTION_SUCCESS,
   RECEIVE_QUESTION_FAILURE,
+  RESET,
 } from '../actions';
 
 const INITIAL_QUESTION = {
@@ -27,6 +28,8 @@ const Questions = (state = INITIAL_QUESTION, action) => {
         error: action.error,
         isFetching: false,
       };
+    case RESET:
+      return INITIAL_QUESTION;
     default:
       return state;
   }
