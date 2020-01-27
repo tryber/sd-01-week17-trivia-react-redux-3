@@ -17,12 +17,12 @@ const sendPoints = (changeCont, Counter, choice, correct) => {
   } else {
     console.log(0);
     // addPoints(0);
-  };
+  }
   changeCont();
 };
 
 const NextButton = ({ changeCont, Counter, choice, correct }) => (
-  < button
+  <button
     className="Button_next-answer"
     onClick={() => sendPoints(changeCont, Counter, choice, correct)}
     data-testid="btn-next"
@@ -34,10 +34,6 @@ const NextButton = ({ changeCont, Counter, choice, correct }) => (
 const mapStateToProps = ({ Counter }) => ({
   Counter,
 });
-
-// const mapDispatchToProps = (dispatch) => ({
-//   setSettings: (value) => dispatch(addSettings(value)),
-// });
 
 export default connect(mapStateToProps)(NextButton);
 

@@ -19,12 +19,10 @@ class Counter extends React.Component {
   componentDidUpdate() {
     const { timer, paused } = this.state;
     const { clicked } = this.props;
-    if (!clicked) {
-      if (paused) (this.changePausedFalse());
-      if (!paused) (setTimeout(() => this.changeCounter(), 1000));
-    } else {
-      if (timer !== 30) (this.changePausedTrue());
-    }
+
+    if (paused && !clicked) (this.changePausedFalse());
+    if (!paused && !clicked) (setTimeout(() => this.changeCounter(), 1000));
+    if (timer !== 30 && !clicked) this.changePausedTrue();
   }
 
   changePausedTrue() {
@@ -37,10 +35,10 @@ class Counter extends React.Component {
 
   changeCounter() {
     const { timer, paused } = this.state;
-    const { changeClicked } = this.props
+    const { changeClicked } = this.props;
     if (timer !== 0 && !paused) {
-      this.setState(({ timer }) => ({
-        timer: timer - 1,
+      this.setState((state) => ({
+        timer: state.timer - 1,
       }));
     } else {
       this.changePausedTrue();

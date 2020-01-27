@@ -15,6 +15,7 @@ class Game extends React.Component {
 
     this.changeClicked = this.changeClicked.bind(this);
     this.returnClicked = this.returnClicked.bind(this);
+    this.renderCounter = this.renderCounter.bind(this);
   }
 
   changeClicked(value) {
@@ -32,7 +33,7 @@ class Game extends React.Component {
     changeCont();
   }
 
-  renderCounter = () => {
+  renderCounter() {
     const { question } = this.props;
     const { clicked } = this.state;
     return (
@@ -43,6 +44,7 @@ class Game extends React.Component {
       />
     )
   }
+
   renderGame() {
     const { question, allAnswers } = this.props;
     const { clicked, choice } = this.state;
