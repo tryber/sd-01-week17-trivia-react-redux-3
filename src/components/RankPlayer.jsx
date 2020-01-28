@@ -5,7 +5,7 @@ import './RankPlayer.css';
 const RankPlayer = ({ index, name, score, picture }) => (
   <div className="RankPlayer">
     <img
-      alt='profile-picture'
+      alt={`profileImg-${name}`}
       src={picture}
       data-testid={`profile-picture-${index}`}
     />
