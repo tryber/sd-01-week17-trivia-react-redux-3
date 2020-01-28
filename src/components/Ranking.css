@@ -6,3 +6,18 @@
   margin-left: 25%;
   width: 50%;
 }
+
+.Ranking a {
+  background: #f0f0f0;
+  border: 1px solid black;
+  color: black;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  height: 50px;
+  margin: 2px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  width: 374px;
+}
