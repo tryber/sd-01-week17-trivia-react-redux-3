@@ -1,6 +1,6 @@
 import React from 'react';
-import RankPlayer from './RankPlayer';
 import { Link } from 'react-router-dom';
+import RankPlayer from './RankPlayer';
 import { getRanking } from '../services/LocalStorage';
 import './Ranking.css';
 
@@ -19,7 +19,7 @@ const Ranking = () => (
           picture={picture}
         />
       ))}
-      <Link to="/" className="back" >Back</Link>
+    <Link to="/" className="back" >Back</Link>
   </div>
 );
 
