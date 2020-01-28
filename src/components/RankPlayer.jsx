@@ -5,6 +5,7 @@ import './RankPlayer.css';
 const RankPlayer = ({ index, name, score, picture }) => (
   <div className="RankPlayer">
     <img
+      alt='profile-picture'
       src={picture}
       data-testid={`profile-picture-${index}`}
     />
@@ -18,8 +19,8 @@ export default RankPlayer;
 
 RankPlayer.propTypes = {
   name: PropTypes.string.isRequired,
-  linkImage: PropTypes.string.isRequired,
-  points: PropTypes.number.isRequired,
+  picture: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
 };
 

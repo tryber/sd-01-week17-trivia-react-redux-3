@@ -12,7 +12,7 @@ const Ranking = () => (
       .map(({ name, score, picture }, index) => (
         <RankPlayer
           index={index}
-          key={index}
+          key={`${index}-${name}`}
           name={name}
           score={score}
           picture={picture}
