@@ -53,9 +53,9 @@ class Counter extends React.Component {
   }
 
   render() {
-    const { timer } = this.state;
+    const { timer, paused } = this.state;
     const { clicked, difficulty } = this.props;
-    if (clicked) (this.sendValues(difficulty, timer));
+    if (clicked && !paused) (this.sendValues(difficulty, timer));
     return (
       <div>
         {clicked || <p data-testid="timer">{`Time: ${timer}`}</p>}
