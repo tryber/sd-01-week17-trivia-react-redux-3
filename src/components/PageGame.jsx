@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Game from './Game';
 import Loading from './Loading';
-import { fetchQuestion } from '../actions';
+import { fetchQuestion, reset } from '../actions';
 import './PageGame.css';
 
 class PageGame extends React.Component {
@@ -71,10 +71,13 @@ class PageGame extends React.Component {
   }
 
   render() {
-    const { history: { action } } = this.props;
+    const { history: { action }, resetData } = this.props;
     const { contQuestion, response } = this.state;
     if (action === 'POP') return <Redirect to="/" />;
-    if (response === 3) return <Redirect to="/" />;
+    if (response === 3) {
+      resetData();
+      return <Redirect to="/" />;
+    }
     if (contQuestion === 5) return <Redirect to="/feedback" />;
     return (
       <div className="Game_screen">
@@ -93,6 +96,7 @@ const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data } }) =>
 
 const mapDispatchToProps = (dispatch) => ({
   getQuestions: (url) => dispatch(fetchQuestion(url)),
+  resetData: () => dispatch(reset()),
 });
 
 
@@ -111,6 +115,7 @@ PageGame.propTypes = {
   history: PropTypes.shape({
     action: PropTypes.string.isRequired,
   }).isRequired,
+  resetData: PropTypes.func.isRequired,
 };
 
 PageGame.defaultProps = {
