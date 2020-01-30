@@ -76,8 +76,8 @@ class PageGame extends React.Component {
     if (action === 'POP') return <Redirect to="/" />;
     if (response === 3) {
       resetData();
-      return <Redirect to="/" />
-    };
+      return <Redirect to="/" />;
+    }
     if (contQuestion === 5) return <Redirect to="/feedback" />;
     return (
       <div className="Game_screen">
@@ -96,7 +96,7 @@ const mapStateToProps = ({ Url: { state }, Questions: { isFetching, data } }) =>
 
 const mapDispatchToProps = (dispatch) => ({
   getQuestions: (url) => dispatch(fetchQuestion(url)),
-  resetData: () => dispatch(reset(url)),
+  resetData: () => dispatch(reset()),
 });
 
 
